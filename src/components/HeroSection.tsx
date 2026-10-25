@@ -26,6 +26,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onSelectNotice
 }) => {
   const latestNotice = notices[0];
+  const [activePhoto, setActivePhoto] = React.useState<'campus' | 'assembly'>('campus');
+  const currentImage = activePhoto === 'campus' ? SCHOOL_IMAGES.actualCampus : SCHOOL_IMAGES.morningAssembly;
 
   return (
     <div className="relative">
@@ -33,9 +35,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative min-h-[620px] lg:min-h-[700px] flex items-center justify-center overflow-hidden bg-stone-900">
         {/* Background Image with Fallback */}
         <img
-          src={SCHOOL_IMAGES.hero}
-          alt="PM SHRI Govt High School Chowgam campus nestled in the green mountain valley"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
+          key={activePhoto}
+          src={currentImage}
+          alt={activePhoto === 'campus' 
+            ? "PM SHRI Govt High School Chowgam campus nestled in the green mountain valley" 
+            : "PM SHRI Govt High School Chowgam morning assembly in the highlands"}
+          className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-opacity duration-700 ease-out"
           referrerPolicy="no-referrer"
         />
 
@@ -44,6 +49,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         
         {/* Subtle decorative geometric mountain contour */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/20 via-transparent to-transparent pointer-events-none" />
+
+        {/* Authentic Campus Photo Switcher in Hero */}
+        <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 sm:gap-2 bg-stone-950/85 backdrop-blur-md p-1.5 rounded-xl border border-white/20 text-xs text-white shadow-lg">
+          <span className="text-[10px] sm:text-[11px] text-stone-300 font-mono px-1 sm:px-2 hidden xs:inline">Campus View:</span>
+          <button
+            onClick={() => setActivePhoto('campus')}
+            className={`px-2.5 py-1 text-xs rounded-lg font-medium transition-all ${
+              activePhoto === 'campus'
+                ? 'bg-emerald-700 text-white shadow-xs font-semibold'
+                : 'text-stone-300 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            School Building
+          </button>
+          <button
+            onClick={() => setActivePhoto('assembly')}
+            className={`px-2.5 py-1 text-xs rounded-lg font-medium transition-all flex items-center gap-1.5 ${
+              activePhoto === 'assembly'
+                ? 'bg-emerald-700 text-white shadow-xs font-semibold'
+                : 'text-stone-300 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            Morning Assembly
+          </button>
+        </div>
 
         {/* Content Container */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center text-white">

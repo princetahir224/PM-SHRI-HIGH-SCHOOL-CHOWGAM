@@ -44,11 +44,13 @@ export default function App() {
       const saved = localStorage.getItem('pmshri_staff');
       if (saved) {
         const parsed = JSON.parse(saved);
-        // Ensure verified HOI details override obsolete placeholder
-        if (parsed.length > 0 && (parsed[0].name.includes('[Headmaster') || parsed[0].name.includes('[Head of Institution'))) {
-          parsed[0].name = INITIAL_SCHOOL_INFO.hoi.name;
-          parsed[0].qualifications = INITIAL_SCHOOL_INFO.hoi.qualifications;
-          parsed[0].status = 'Verified Role';
+        // If saved data has old placeholders, refresh with updated INITIAL_STAFF_MEMBERS
+        const hasOldPlaceholders = parsed.some((s: StaffMember) => 
+          s.name.includes('[Staff Member') || s.name.includes('[Headmaster') || s.name.includes('Configurable')
+        );
+        if (hasOldPlaceholders) {
+          localStorage.setItem('pmshri_staff', JSON.stringify(INITIAL_STAFF_MEMBERS));
+          return INITIAL_STAFF_MEMBERS;
         }
         return parsed;
       }

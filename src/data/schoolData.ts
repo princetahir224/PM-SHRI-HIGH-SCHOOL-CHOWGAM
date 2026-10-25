@@ -42,7 +42,7 @@ export interface StaffMember {
   qualifications: string;
   responsibilities: string;
   isHOI?: boolean;
-  status: 'Verified Role' | 'Profile Configurable';
+  status: 'Verified Role' | 'Verified Staff' | 'Active Cadre' | 'Profile Configurable';
 }
 
 export interface NoticeItem {
@@ -624,134 +624,134 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
   {
     id: "staff-2",
     slotNumber: 2,
-    role: "Senior Master / Faculty",
+    role: "Senior Master / Science Faculty",
     designation: "Teacher / Master",
     department: "Science & Mathematics",
-    name: "[Staff Member 02 - Configurable]",
-    qualifications: "B.Sc, B.Ed [Official Records]",
-    responsibilities: "Secondary science practicals, mathematics instruction, science kit management.",
-    status: "Profile Configurable"
+    name: "Mr. Ab Raheem Shairgojri",
+    qualifications: "B.Sc, B.Ed [Official Department Cadre]",
+    responsibilities: "Secondary science practicals, experimental demonstrations, mathematics instruction, and science kit management.",
+    status: "Verified Staff"
   },
   {
     id: "staff-3",
     slotNumber: 3,
-    role: "Faculty Member",
+    role: "Faculty Member / Social Sciences",
     designation: "Teacher / Master",
     department: "Social Sciences & Humanities",
-    name: "[Staff Member 03 - Configurable]",
-    qualifications: "M.A. (History/Pol. Science), B.Ed [Official Records]",
-    responsibilities: "Social science curriculum, constitutional literacy, assembly coordination.",
-    status: "Profile Configurable"
+    name: "Mr. Gh Mohd Rafique",
+    qualifications: "M.A., B.Ed [Official Department Cadre]",
+    responsibilities: "Social science curriculum, constitutional literacy, geography & historical studies, and morning assembly coordination.",
+    status: "Verified Staff"
   },
   {
     id: "staff-4",
     slotNumber: 4,
-    role: "Language Faculty",
+    role: "Language Faculty / English",
     designation: "Teacher",
     department: "English Language & Literature",
-    name: "[Staff Member 04 - Configurable]",
-    qualifications: "M.A. English, B.Ed [Official Records]",
-    responsibilities: "English communication skills, grammar foundation, literary club mentorship.",
-    status: "Profile Configurable"
+    name: "Mr. Nazir Ahmad Khan",
+    qualifications: "M.A., B.Ed [Official Department Cadre]",
+    responsibilities: "English communication skills, grammar foundation, vocabulary building, and literary club mentorship.",
+    status: "Verified Staff"
   },
   {
     id: "staff-5",
     slotNumber: 5,
-    role: "Language Faculty",
+    role: "Language Faculty / Urdu",
     designation: "Teacher",
     department: "Urdu Language & Literature",
-    name: "[Staff Member 05 - Configurable]",
-    qualifications: "M.A. Urdu, B.Ed [Official Records]",
-    responsibilities: "Urdu reading & writing excellence, calligraphy, cultural programmes.",
-    status: "Profile Configurable"
+    name: "Mr. Gulzar Ahmad Khan",
+    qualifications: "M.A., B.Ed [Official Department Cadre]",
+    responsibilities: "Urdu reading & writing excellence, calligraphy, ethical stories, and cultural programme coordination.",
+    status: "Verified Staff"
   },
   {
     id: "staff-6",
     slotNumber: 6,
-    role: "Language / Cultural Faculty",
+    role: "Language & Regional Heritage Faculty",
     designation: "Teacher",
-    department: "Kashmiri / Regional Languages",
-    name: "[Staff Member 06 - Configurable]",
-    qualifications: "M.A., B.Ed [Official Records]",
-    responsibilities: "Mother tongue language instruction, folk traditions, cultural preservation.",
-    status: "Profile Configurable"
+    department: "Kashmiri Language & Heritage",
+    name: "Mr. Ab Rashid Wani",
+    qualifications: "M.A., B.Ed [Official Department Cadre]",
+    responsibilities: "Mother tongue language instruction, regional heritage, Kashmiri literature, and cultural preservation.",
+    status: "Verified Staff"
   },
   {
     id: "staff-7",
     slotNumber: 7,
     role: "Mathematics Faculty",
     designation: "Teacher",
-    department: "Mathematics",
-    name: "[Staff Member 07 - Configurable]",
-    qualifications: "B.Sc, B.Ed [Official Records]",
-    responsibilities: "Foundational mathematics, remedial math sessions, numerical reasoning.",
-    status: "Profile Configurable"
+    department: "Mathematics & Numerical Reasoning",
+    name: "Mr. Mohd Altaf Malik",
+    qualifications: "B.Sc, B.Ed [Official Department Cadre]",
+    responsibilities: "Foundational mathematics, arithmetic proficiency, remedial math sessions, and competitive exam preparation.",
+    status: "Verified Staff"
   },
   {
     id: "staff-8",
     slotNumber: 8,
-    role: "ICT & Digital Coordinator",
+    role: "ICT & Digital Learning Coordinator",
     designation: "Teacher / ICT In-charge",
     department: "Information & Communication Technology",
-    name: "[Staff Member 08 - Configurable]",
-    qualifications: "BCA / B.Sc (IT) / Certified ICT [Official Records]",
-    responsibilities: "ICT laboratory management, smart classroom operations, cyber awareness.",
-    status: "Profile Configurable"
+    name: "Mr. Ajaz Ahmad Wani",
+    qualifications: "B.Sc / ICT Specialist, B.Ed [Official Cadre]",
+    responsibilities: "ICT computer laboratory operations, Smart Classroom interactive displays, student digital literacy, and DIKSHA coordination.",
+    status: "Verified Staff"
   },
   {
     id: "staff-9",
     slotNumber: 9,
-    role: "Physical Education Faculty",
-    designation: "Physical Education Teacher (PET)",
-    department: "Sports & Physical Education",
-    name: "[Staff Member 09 - Configurable]",
-    qualifications: "B.P.Ed / C.P.Ed [Official Records]",
-    responsibilities: "Morning PT, yoga instruction, athletic meet coordination, team coaching.",
-    status: "Profile Configurable"
+    role: "General Science & Eco-Club In-charge",
+    designation: "Teacher",
+    department: "General Science & Environmental Studies",
+    name: "Mr. Mohd Anzar Khan",
+    qualifications: "B.Sc, B.Ed [Official Department Cadre]",
+    responsibilities: "Middle wing general science, student Eco-Club supervision, campus tree plantation, and environmental awareness.",
+    status: "Verified Staff"
   },
   {
     id: "staff-10",
     slotNumber: 10,
-    role: "Library & Reading In-charge",
-    designation: "Teacher / Library In-charge",
-    department: "Library & Co-Curricular Affairs",
-    name: "[Staff Member 10 - Configurable]",
-    qualifications: "B.A. / B.Lib / B.Ed [Official Records]",
-    responsibilities: "School library accession, book borrowing records, reading activities.",
-    status: "Profile Configurable"
+    role: "Physical Education & Wellness In-charge",
+    designation: "Physical Education Teacher (PET)",
+    department: "Sports & Physical Wellness",
+    name: "Mr. Muzzafer Rasool Malik",
+    qualifications: "B.P.Ed / C.P.Ed [Official Department Cadre]",
+    responsibilities: "Daily morning assembly physical training (PT), yoga sessions, inter-house volleyball, cricket, and athletic tournaments.",
+    status: "Verified Staff"
   },
   {
     id: "staff-11",
     slotNumber: 11,
-    role: "Eco-Club & Science Practical In-charge",
-    designation: "Teacher",
-    department: "Environmental Sciences & Biology",
-    name: "[Staff Member 11 - Configurable]",
-    qualifications: "B.Sc, B.Ed [Official Records]",
-    responsibilities: "Eco-club guidance, campus plantation, cleanliness and waste segregation drives.",
-    status: "Profile Configurable"
+    role: "Library & Co-Curricular Coordinator",
+    designation: "Teacher / Library In-charge",
+    department: "Library & Student Affairs",
+    name: "Mr. Tahir Ahmad Kumar",
+    qualifications: "M.A. / B.Ed [Official Department Cadre]",
+    responsibilities: "School library accession, student reading periods, debating society, quiz competitions, and co-curricular programmes.",
+    status: "Verified Staff"
   },
   {
     id: "staff-12",
     slotNumber: 12,
-    role: "General Faculty & Student Welfare",
-    designation: "Teacher",
-    department: "General Academics & CWSN Support",
-    name: "[Staff Member 12 - Configurable]",
-    qualifications: "B.A. / B.Ed [Official Records]",
-    responsibilities: "Inclusive student accommodations, peer mentoring, foundational literacy.",
-    status: "Profile Configurable"
+    role: "Student Welfare & Inclusive Education",
+    designation: "Teacher / Welfare Coordinator",
+    department: "Student Welfare & CWSN Support",
+    name: "Faculty Member 12 (Student Welfare Desk)",
+    qualifications: "B.A. / B.Ed [Official Department Cadre]",
+    responsibilities: "Inclusive student accommodations, peer mentoring, scholarship documentation, and midday meal supervision.",
+    status: "Active Cadre"
   },
   {
     id: "staff-13",
     slotNumber: 13,
-    role: "Administrative & Support Staff",
+    role: "Administrative & Office Operations",
     designation: "Junior Assistant / Support Official",
     department: "Office & Institutional Records",
-    name: "[Staff Member 13 - Configurable]",
-    qualifications: "Higher Secondary / Diploma [Official Records]",
-    responsibilities: "School admissions register, official correspondence, store maintenance.",
-    status: "Profile Configurable"
+    name: "Support Staff 13 (Institutional Office)",
+    qualifications: "Higher Secondary / Diploma [Official Cadre]",
+    responsibilities: "Student admissions register, board correspondence with JKBOSE, store records, and institutional logistical support.",
+    status: "Active Cadre"
   }
 ];
 

@@ -134,17 +134,36 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative rounded-xl overflow-hidden min-h-[360px] border border-stone-200 shadow-xs">
-              <img
-                src={SCHOOL_IMAGES.actualCampus}
-                alt="PM SHRI Govt High School Chowgam two-story building and flower garden with mountain background"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex items-end p-6">
-                <div className="text-white text-xs sm:text-sm">
-                  <div className="font-semibold text-amber-300">Official Campus & Main Building</div>
-                  <p className="text-stone-200 text-xs mt-1">Two-story red-brick school block, vibrant floral gardens, and forested mountain backdrop in Zone Shanglus.</p>
+            <div className="lg:col-span-5 flex flex-col gap-4">
+              {/* Photo 1: Campus Building */}
+              <div className="relative rounded-xl overflow-hidden min-h-[200px] sm:min-h-[220px] border border-stone-200 shadow-xs group">
+                <img
+                  src={SCHOOL_IMAGES.actualCampus}
+                  alt="PM SHRI Govt High School Chowgam two-story building and flower garden with mountain background"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex items-end p-4">
+                  <div className="text-white text-xs">
+                    <div className="font-semibold text-amber-300">Two-Story Main School Building</div>
+                    <p className="text-stone-300 text-[11px] mt-0.5">Two-story red-brick building with mountain backdrop in Chowgam.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Photo 2: Morning Assembly in the Highlands */}
+              <div className="relative rounded-xl overflow-hidden min-h-[200px] sm:min-h-[220px] border border-stone-200 shadow-xs group">
+                <img
+                  src={SCHOOL_IMAGES.morningAssembly}
+                  alt="Morning Assembly in the Highlands at PM SHRI Govt High School Chowgam"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex items-end p-4">
+                  <div className="text-white text-xs">
+                    <div className="font-semibold text-amber-300">Morning Assembly in the Highlands</div>
+                    <p className="text-stone-300 text-[11px] mt-0.5">Students and faculty gathered for morning prayer at the foot of pine slopes.</p>
+                  </div>
                 </div>
               </div>
             </div>

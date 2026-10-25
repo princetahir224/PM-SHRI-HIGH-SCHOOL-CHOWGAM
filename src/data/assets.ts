@@ -2,6 +2,8 @@ export const SCHOOL_IMAGES = {
   // Official uploaded photograph of the school building and campus
   hero: "/assets/aistudio/Vibrant_Smart_Campus_in_the_Mountains_848daa73.png",
   actualCampus: "/assets/aistudio/Vibrant_Smart_Campus_in_the_Mountains_848daa73.png",
+  // Official uploaded photograph of the Morning Assembly in the Highlands
+  morningAssembly: "/assets/aistudio/Mountain_School_Assembly_in_the_Highlands__1__e0e8233f.png",
   // Official uploaded photograph of the Headmaster
   headmaster: "/assets/aistudio/Headmaster_s_Formal_School_Office_Portrait_43a7726c.png",
   smartClassroom: "/src/assets/images/smart_classroom_ict_1792911690664.jpg",
@@ -11,6 +13,13 @@ export const SCHOOL_IMAGES = {
 };
 
 export const GALLERY_ITEMS = [
+  {
+    id: "gal-assembly",
+    title: "Daily Morning Assembly in the Highlands — PM SHRI GHS Chowgam",
+    category: "Campus & Landscape",
+    image: "/assets/aistudio/Mountain_School_Assembly_in_the_Highlands__1__e0e8233f.png",
+    caption: "Authentic view of the morning assembly at PM SHRI Govt High School Chowgam, nestled against the pine-clad Himalayan slopes, with students and teachers gathered for daily prayer, moral assembly, and national anthem."
+  },
   {
     id: "gal-official",
     title: "Official Campus & Two-Story Building — PM SHRI GHS Chowgam",

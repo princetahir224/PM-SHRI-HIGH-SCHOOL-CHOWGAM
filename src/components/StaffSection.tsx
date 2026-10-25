@@ -135,14 +135,73 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
           </div>
         )}
 
-        {/* 12 Staff Member Cards (Transparent, Verified Slots with Clear Placeholders) */}
+        {/* Authentic Morning Assembly Feature Showcase */}
+        <div className="bg-emerald-950 text-white rounded-2xl overflow-hidden border border-emerald-900 mb-12 shadow-md">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            <div className="lg:col-span-5 relative min-h-[300px] lg:min-h-[380px] bg-stone-900">
+              <img
+                src={SCHOOL_IMAGES.morningAssembly}
+                alt="Morning Assembly in the Highlands at PM SHRI Govt High School Chowgam"
+                className="w-full h-full object-cover object-center"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-3 left-3 bg-emerald-900/90 backdrop-blur-xs text-amber-300 border border-emerald-700/80 text-[11px] font-mono font-semibold px-2.5 py-1 rounded-md shadow-xs">
+                Official Campus Photograph
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-300 font-semibold mb-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  <span>Daily Morning Assembly in the Highlands</span>
+                  <span aria-hidden="true" className="text-emerald-700">·</span>
+                  <span>Zone Shanglus, J&K</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-3">
+                  Morning Assembly & Moral Cultivation at the Foot of the Pine Mountains
+                </h3>
+                <p className="text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
+                  Every morning at PM SHRI Govt High School Chowgam commences with our outdoor assembly on the mountain grounds. Encircled by towering evergreen conifers and fresh alpine breezes, our 13 dedicated staff members guide students through daily prayers, moral reflections, news analysis, and physical training (PT).
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-emerald-900/80 text-xs">
+                  <div className="p-2.5 bg-emerald-900/40 rounded-lg border border-emerald-800/60">
+                    <div className="font-semibold text-amber-300 text-[11px]">Daily Assembly Routines</div>
+                    <div className="text-[11px] text-stone-300 mt-0.5">National anthem, universal prayers, and inspirational moral thought.</div>
+                  </div>
+                  <div className="p-2.5 bg-emerald-900/40 rounded-lg border border-emerald-800/60">
+                    <div className="font-semibold text-amber-300 text-[11px]">Faculty Mentorship</div>
+                    <div className="text-[11px] text-stone-300 mt-0.5">All 13 staff members attend, mentor, and supervise student queues.</div>
+                  </div>
+                  <div className="p-2.5 bg-emerald-900/40 rounded-lg border border-emerald-800/60">
+                    <div className="font-semibold text-amber-300 text-[11px]">Scenic Serenity</div>
+                    <div className="text-[11px] text-stone-300 mt-0.5">Fresh Himalayan valley air instilling alertness and inner discipline.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-emerald-900/60 flex flex-wrap items-center justify-between gap-3 text-[11px] text-emerald-300/80 font-mono">
+                <span>Location: PM SHRI GHS Chowgam Highlands Assembly Ground</span>
+                <span className="text-amber-400">Values for Life • Discipline • Excellence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 12 Staff Member Cards (Transparent, Verified Slots with Official Staff Names) */}
         <div>
-          <div className="flex items-center justify-between gap-4 mb-6">
-            <h3 className="text-lg font-bold text-stone-900">
-              Dedicated Faculty & Support Staff (12 Members)
-            </h3>
-            <span className="text-xs text-stone-500 font-mono">
-              Total Staff: 13 (Verified Cadre)
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 className="text-lg font-bold text-stone-900">
+                Dedicated Faculty & Support Staff (12 Members)
+              </h3>
+              <p className="text-xs text-stone-500 mt-0.5">
+                Official staff roster of PM SHRI Govt High School Chowgam under Headmaster Mr. Shareef Ahmad Khan.
+              </p>
+            </div>
+            <span className="text-xs text-stone-600 font-mono bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
+              Total Staff: <strong className="text-stone-900">13 (Verified Cadre)</strong>
             </span>
           </div>
 
@@ -150,17 +209,21 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
             {faculty.map((member) => (
               <div
                 key={member.id}
-                className="bg-stone-50 rounded-xl border border-stone-200 p-5 flex flex-col justify-between hover:border-stone-300 transition-colors shadow-2xs"
+                className="bg-stone-50 rounded-xl border border-stone-200 p-5 flex flex-col justify-between hover:border-emerald-700/40 hover:shadow-sm transition-all shadow-2xs"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 text-xs font-mono text-stone-500 mb-2">
-                    <span className="text-emerald-800 font-semibold">Staff Slot #{member.slotNumber}</span>
-                    <span className="text-[11px] text-stone-400 bg-stone-100 px-2 py-0.5 rounded">
+                    <span className="text-emerald-800 font-bold">Staff Slot #{member.slotNumber}</span>
+                    <span className={`text-[11px] px-2 py-0.5 rounded font-semibold ${
+                      member.status === 'Verified Staff' 
+                        ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' 
+                        : 'bg-stone-200 text-stone-700'
+                    }`}>
                       {member.status}
                     </span>
                   </div>
 
-                  <h4 className="text-base font-bold text-stone-900 mb-1">
+                  <h4 className="text-base font-bold text-stone-900 mb-0.5 flex items-center gap-1.5">
                     {member.name}
                   </h4>
 
@@ -174,7 +237,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
 
                   <div className="text-xs text-stone-600 mb-2">
                     <span className="text-stone-400">Qual: </span>
-                    <span className="font-mono text-stone-700">{member.qualifications}</span>
+                    <span className="font-mono text-stone-800 font-medium">{member.qualifications}</span>
                   </div>
 
                   <p className="text-xs text-stone-500 leading-relaxed mb-4">
@@ -183,12 +246,12 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                 </div>
 
                 <div className="pt-3 border-t border-stone-200/70 flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-stone-400">PM SHRI GHS Chowgam</span>
+                  <span className="text-[11px] text-stone-400 font-mono">PM SHRI GHS Chowgam</span>
                   <button
                     onClick={() => onEditStaff(member)}
-                    className="text-emerald-900 hover:text-emerald-700 font-semibold underline"
+                    className="text-emerald-900 hover:text-emerald-700 font-semibold underline text-xs"
                   >
-                    Configure Slot
+                    Edit Record
                   </button>
                 </div>
               </div>
@@ -196,7 +259,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
           </div>
 
           <div className="mt-8 p-4 bg-stone-100 rounded-lg text-xs text-stone-600 text-center leading-relaxed">
-            <strong>Transparency Notice:</strong> Staff names and detailed qualifications are maintained by the school administration and can be updated through the authorized staff console. No official personal facts or achievements are fabricated.
+            <strong>Transparency Notice:</strong> Staff names and duties reflect the official institutional roster of PM SHRI Govt High School Chowgam (Zone Shanglus, Dist. Anantnag). Authorized staff administrators can update responsibilities through the administration console.
           </div>
         </div>
 
