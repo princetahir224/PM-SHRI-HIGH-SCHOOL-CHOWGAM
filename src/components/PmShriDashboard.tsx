@@ -94,6 +94,17 @@ export const PmShriDashboard: React.FC<PmShriDashboardProps> = ({
             <p className="mt-4 text-stone-600 text-sm sm:text-base leading-relaxed">
               Transparent, evidence-based institutional monitoring tracking the 16 core domains of school development under the PM SHRI scheme. Authorized staff regularly update verified evidence and targets.
             </p>
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+              <span className="px-2.5 py-1 bg-emerald-100 text-emerald-950 rounded-md font-semibold border border-emerald-300">
+                Institutional Head: Headmaster Mr. Shareef Ahmad Khan
+              </span>
+              <span className="px-2.5 py-1 bg-amber-100 text-amber-950 rounded-md font-semibold border border-amber-300">
+                ⭐ PM SHRI In-charge: Mr. Muzzaffer Ahmad Khan (Master)
+              </span>
+              <span className="px-2.5 py-1 bg-stone-100 text-stone-700 rounded-md font-mono border border-stone-200">
+                Zone: Shangus
+              </span>
+            </div>
           </div>
 
           <button

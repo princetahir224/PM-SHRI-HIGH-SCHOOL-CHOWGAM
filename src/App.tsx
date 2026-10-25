@@ -48,14 +48,29 @@ export default function App() {
         const hasOldPlaceholders = parsed.some((s: StaffMember) => 
           s.name.includes('[Staff Member') || s.name.includes('[Headmaster') || s.name.includes('Configurable')
         );
-        const hasSlot7Muzzaffer = parsed.some((s: StaffMember) => 
-          s.slotNumber === 7 && s.name.includes('Muzzaffer Ahmad Khan') && s.designation === 'Master'
+        const hasSlot7PmShri = parsed.some((s: StaffMember) => 
+          s.slotNumber === 7 && s.role.includes('PM SHRI')
+        );
+        const hasSamagra = parsed.some((s: StaffMember) =>
+          s.slotNumber === 3 && s.role.includes('Samagra')
+        );
+        const hasAltafClerk = parsed.some((s: StaffMember) =>
+          s.slotNumber === 8 && s.name.includes('Altaf') && s.role.includes('Office Clerk')
+        );
+        const hasSportsIncharge = parsed.some((s: StaffMember) =>
+          s.slotNumber === 10 && s.role.includes('Sports')
         );
         const hasUpdatedTahir = parsed.some((s: StaffMember) =>
           s.name.includes('Tahir Ahmad Kumar') && s.qualifications.includes('M.Sc. Math')
         );
+        const hasScienceLabIncharge = parsed.some((s: StaffMember) =>
+          s.slotNumber === 9 && s.role.includes('Science Lab')
+        );
+        const hasMuzzaferScience = parsed.some((s: StaffMember) =>
+          s.slotNumber === 11 && s.role.includes('Science Teacher')
+        );
 
-        if (hasOldPlaceholders || !hasSlot7Muzzaffer || !hasUpdatedTahir) {
+        if (hasOldPlaceholders || !hasSlot7PmShri || !hasSamagra || !hasAltafClerk || !hasSportsIncharge || !hasUpdatedTahir || !hasScienceLabIncharge || !hasMuzzaferScience) {
           localStorage.setItem('pmshri_staff', JSON.stringify(INITIAL_STAFF_MEMBERS));
           return INITIAL_STAFF_MEMBERS;
         }

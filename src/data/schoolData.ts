@@ -71,7 +71,7 @@ export const INITIAL_SCHOOL_INFO = {
   subtext: "Empowering young minds through quality education, digital innovation, inclusive learning, environmental responsibility, and holistic development in the beautiful surroundings of Chowgam.",
   location: {
     village: "Chowgam",
-    zone: "Shanglus",
+    zone: "Shangus",
     district: "Anantnag",
     stateUT: "Jammu and Kashmir",
     country: "India",
@@ -635,12 +635,12 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
   {
     id: "staff-3",
     slotNumber: 3,
-    role: "Master (Social Sciences & Humanities)",
+    role: "Master & Samagra Shiksha In-charge",
     designation: "Master",
-    department: "Social Sciences & Humanities",
+    department: "Social Sciences & Samagra Shiksha Desk",
     name: "Mr. Gh Mohd Rafique",
     qualifications: "M.A., B.Ed [Official Department Cadre]",
-    responsibilities: "Social science curriculum, constitutional literacy, geography & historical studies, and morning assembly coordination.",
+    responsibilities: "Samagra Shiksha In-charge managing Samagra flagship schemes, civil and pedagogical grants, student uniforms & free textbook distribution, school management coordination, and social sciences curriculum.",
     status: "Verified Staff"
   },
   {
@@ -679,56 +679,56 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
   {
     id: "staff-7",
     slotNumber: 7,
-    role: "Master (General Academics & Pedagogy)",
+    role: "Master & PM SHRI In-charge",
     designation: "Master",
-    department: "General Academics & Secondary Cadre",
+    department: "General Academics & PM SHRI Cell",
     name: "Mr. Muzzaffer Ahmad Khan",
     qualifications: "M.A., B.Ed [Official Department Cadre]",
-    responsibilities: "Secondary academic curriculum delivery, continuous comprehensive assessment (CCE), pedagogical mentorship, and classroom guidance.",
+    responsibilities: "PM SHRI In-charge overseeing the 16 development domains, Green School interventions, smart classroom integration, benchmark self-audits, continuous comprehensive evaluation (CCE), and secondary academic guidance.",
     status: "Verified Staff"
   },
   {
     id: "staff-8",
     slotNumber: 8,
-    role: "Master (Mathematics & Statistics)",
-    designation: "Master",
-    department: "Mathematics & Statistics",
-    name: "Mr. Mohd Altaf Malik",
+    role: "Teacher & Office Clerk / In-charge",
+    designation: "Teacher",
+    department: "Mathematics & Institutional Office Administration",
+    name: "Mr. Altaf Ahmad (Mohd Altaf)",
     qualifications: "B.Sc, B.Ed [Official Department Cadre]",
-    responsibilities: "Foundational and secondary mathematics, arithmetic reasoning, remedial math clinics, and competitive exam preparation.",
+    responsibilities: "Teacher & Office Clerk / In-charge handling official institutional correspondence with ZEO Shangus and CEO Anantnag, admissions registers, student records, salary and service books, and secondary mathematics instruction.",
     status: "Verified Staff"
   },
   {
     id: "staff-9",
     slotNumber: 9,
-    role: "Teacher (General Science & Social Studies)",
+    role: "Teacher (Science Teacher & Science Lab In-charge)",
     designation: "Teacher",
-    department: "General Science & Social Studies",
-    name: "Mr. Ajaz Ahmad Wani",
+    department: "Science & Composite Science Laboratory",
+    name: "Mr. Ajaz Ahmad Wani (Mr. Ajaz Ahmad)",
     qualifications: "B.Sc, B.Ed [Official Department Cadre]",
-    responsibilities: "Middle wing general science, student social studies curriculum, classroom instruction, and co-curricular activities.",
+    responsibilities: "Science Teacher & Science Laboratory In-charge overseeing the composite science laboratory, physics/chemistry/biology experimental apparatus, student practical sessions, laboratory safety standards, and inquiry-based STEM demonstrations.",
     status: "Verified Staff"
   },
   {
     id: "staff-10",
     slotNumber: 10,
-    role: "Teacher (General Science & Eco-Club In-charge)",
+    role: "Teacher & Sports In-charge",
     designation: "Teacher",
-    department: "General Science & Environmental Studies",
-    name: "Mr. Mohd Anzar Khan",
+    department: "General Science, Sports & Physical Wellness",
+    name: "Mr. Mohd Anzar Khan (Anzar Ahmad)",
     qualifications: "B.Sc, B.Ed [Official Department Cadre]",
-    responsibilities: "Middle wing general science, student Eco-Club supervision, campus tree plantation, and environmental awareness.",
+    responsibilities: "Sports In-charge organizing inter-school athletic meets, volleyball, cricket tournaments, physical training (PT) drills, student Eco-Club supervision, and middle wing general science instruction.",
     status: "Verified Staff"
   },
   {
     id: "staff-11",
     slotNumber: 11,
-    role: "Physical Education Teacher (PET)",
+    role: "Teacher (Science Teacher)",
     designation: "Teacher",
-    department: "Sports, Fitness & Physical Wellness",
+    department: "Science & Experiential Learning",
     name: "Mr. Muzzafer Rasool Malik",
-    qualifications: "B.P.Ed / C.P.Ed [Official Department Cadre]",
-    responsibilities: "Daily morning assembly physical training (PT), yoga sessions, inter-house volleyball, cricket, and athletic tournaments.",
+    qualifications: "B.Sc, B.Ed [Official Department Cadre]",
+    responsibilities: "Science Teacher delivering core general science curriculum, conceptual understanding, hands-on scientific models, practical demonstrations, and student mentorship in scientific inquiry.",
     status: "Verified Staff"
   },
   {
@@ -748,9 +748,9 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
     role: "Administrative & Office Operations",
     designation: "Junior Assistant / Support Official",
     department: "Office & Institutional Records",
-    name: "Support Staff 13 (Institutional Office)",
+    name: "Support Staff (Office Desk, supervised by Mr. Altaf Ahmad)",
     qualifications: "Higher Secondary / Diploma [Official Cadre]",
-    responsibilities: "Student admissions register, board correspondence with JKBOSE, store records, and institutional logistical support.",
+    responsibilities: "Student admissions register, board correspondence with JKBOSE, store records, and clerical operations under the supervision of Office Clerk Mr. Altaf Ahmad.",
     status: "Active Cadre"
   }
 ];

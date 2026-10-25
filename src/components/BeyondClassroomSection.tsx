@@ -143,6 +143,16 @@ export const BeyondClassroomSection: React.FC = () => {
             <div>
               <strong className="text-stone-900">Pedagogical Approach: </strong>
               {selectedDomain.pedagogy}
+              {selectedDomain.code === 'A' && (
+                <span className="block mt-1 text-teal-800 font-semibold">
+                  🔬 Science & Lab In-charge: Mr. Ajaz Ahmad Wani (Science Lab In-charge) & Mr. Muzzafer Rasool Malik (Science Teacher)
+                </span>
+              )}
+              {selectedDomain.code === 'B' && (
+                <span className="block mt-1 text-emerald-800 font-semibold">
+                  🏆 Sports In-charge: Mr. Mohd Anzar Khan (Anzar Ahmad)
+                </span>
+              )}
             </div>
             <div className="text-stone-400 font-mono text-[11px] shrink-0">
               PM SHRI Quality Indicator {selectedDomain.code}

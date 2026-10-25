@@ -162,8 +162,9 @@ export const StudentParentPortal: React.FC = () => {
                 </li>
               </ul>
 
-              <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
-                School Office Working Hours: Monday to Saturday, 10:00 AM – 4:00 PM.
+              <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500 flex flex-wrap items-center justify-between gap-2">
+                <span>School Office Hours: Monday to Saturday, 10:00 AM – 4:00 PM</span>
+                <span className="font-semibold text-emerald-900">Office Clerk: Mr. Altaf Ahmad (Master) · Zone: Shangus</span>
               </div>
             </div>
           </div>

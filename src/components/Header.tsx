@@ -62,7 +62,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-3">
             <span className="font-semibold tracking-wide text-amber-300">PM SHRI SCHOOL</span>
             <span aria-hidden="true" className="text-emerald-700">·</span>
-            <span className="hidden sm:inline">Govt High School Chowgam · Zone Shangas</span>
+            <span className="hidden sm:inline">Govt High School Chowgam · Zone Shangus</span>
             <span aria-hidden="true" className="hidden sm:inline text-emerald-700">·</span>
             <a href="tel:7889725799" className="hidden md:inline text-amber-200 hover:text-white transition-colors">
               Tel: 7889725799

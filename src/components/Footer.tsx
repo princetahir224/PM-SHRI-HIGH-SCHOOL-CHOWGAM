@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdmin }) => {
 
             <div className="text-xs text-stone-400 space-y-1">
               <p>Chowgam Mini-Valley, ~27 km from Anantnag Town</p>
-              <p>Zone: Shangas · Distt: Anantnag, J&K, India</p>
+              <p>Zone: Shangus · Distt: Anantnag, J&K, India</p>
               <div className="pt-2 flex flex-col gap-1 text-stone-300 font-mono text-[11px]">
                 <div>Headmaster: Mr. Shareef Ahmad Khan (M.A., B.Ed.)</div>
                 <div>Phone: <a href="tel:7889725799" className="text-amber-300 hover:underline">7889725799</a></div>

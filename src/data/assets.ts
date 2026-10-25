@@ -9,7 +9,7 @@ export const SCHOOL_IMAGES = {
   smartClassroom: "/src/assets/images/smart_classroom_ict_1792911690664.jpg",
   library: "/src/assets/images/school_library_reading_1792911691547.jpg",
   greenCampus: "/src/assets/images/green_campus_valley_1792911692015.jpg",
-  valleyScenery: "/src/assets/images/hero_school_mountains_1792911690158.jpg",
+  valleyScenery: "/assets/aistudio/Vibrant_Smart_Campus_in_the_Mountains_848daa73.png",
 };
 
 export const GALLERY_ITEMS = [
@@ -36,10 +36,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: "gal-1",
-    title: "School Campus Nestled in Chowgam Mini-Valley",
+    title: "Chowgam School Campus & Scenic Mountain Range",
     category: "Campus & Landscape",
-    image: SCHOOL_IMAGES.valleyScenery,
-    caption: "The peaceful school setting at the foot of lush green mountains, 27 km from Anantnag."
+    image: SCHOOL_IMAGES.actualCampus,
+    caption: "Authentic photograph of PM SHRI Govt High School Chowgam nestled at the foot of lush pine-clad Himalayan foothills in Zone Shangus."
   },
   {
     id: "gal-2",

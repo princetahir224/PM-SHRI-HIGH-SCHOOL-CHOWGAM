@@ -92,7 +92,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                   <div className="text-xs text-stone-500 mt-1 flex flex-wrap items-center gap-2">
                     <span>Qualifications: <strong className="text-stone-800">{hoi.qualifications}</strong></span>
                     <span aria-hidden="true" className="text-stone-300">·</span>
-                    <span className="text-emerald-800 font-semibold">Zone: Shangas / Shanglus</span>
+                    <span className="text-emerald-800 font-semibold">Zone: Shangus</span>
                   </div>
 
                   {/* Direct Contact Links */}
@@ -163,7 +163,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                   <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                   <span>Daily Morning Assembly in the Highlands</span>
                   <span aria-hidden="true" className="text-emerald-700">·</span>
-                  <span>Zone Shanglus, J&K</span>
+                  <span>Zone Shangus, J&K</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-3">
                   Morning Assembly & Moral Cultivation at the Foot of the Pine Mountains
@@ -196,6 +196,86 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
           </div>
         </div>
 
+        {/* Key In-charge Portfolios Spotlight Banner */}
+        <div className="mb-12 bg-stone-900 text-white rounded-2xl p-6 sm:p-8 border border-stone-800 shadow-md">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-800 mb-6">
+            <div>
+              <div className="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold mb-1">
+                Institutional Portfolios · Zone Shangus
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Key Administrative & Academic In-Charge Desks
+              </h3>
+            </div>
+            <span className="text-xs font-mono text-emerald-400 bg-emerald-950/80 px-3 py-1.5 rounded-lg border border-emerald-800 shrink-0">
+              Assigned Leadership Responsibilities
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+            {/* HOI */}
+            <div className="p-3.5 bg-stone-800/80 rounded-xl border border-stone-700/70">
+              <div className="text-amber-400 font-bold uppercase tracking-wider text-[11px]">Head of Institution (HOI)</div>
+              <div className="text-base font-bold text-white mt-0.5">Mr. Shareef Ahmad Khan</div>
+              <div className="text-stone-400 text-[11px] mt-0.5">Headmaster · Overall Institutional Administration & SMC</div>
+            </div>
+
+            {/* PM SHRI In-charge */}
+            <div className="p-3.5 bg-amber-950/40 rounded-xl border border-amber-800/60">
+              <div className="text-amber-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                <span>⭐ PM SHRI In-charge</span>
+              </div>
+              <div className="text-base font-bold text-amber-100 mt-0.5">Mr. Muzzaffer Ahmad Khan</div>
+              <div className="text-stone-300 text-[11px] mt-0.5">Master · 16 Development Domains, NEP 2020 & Green School</div>
+            </div>
+
+            {/* Samagra Shiksha In-charge */}
+            <div className="p-3.5 bg-indigo-950/40 rounded-xl border border-indigo-800/60">
+              <div className="text-indigo-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                <span>📚 Samagra Shiksha In-charge</span>
+              </div>
+              <div className="text-base font-bold text-indigo-100 mt-0.5">Mr. Gh Mohd Rafique</div>
+              <div className="text-stone-300 text-[11px] mt-0.5">Master · Flagship Schemes, Grants, Free Textbooks & Uniforms</div>
+            </div>
+
+            {/* Office Clerk */}
+            <div className="p-3.5 bg-emerald-950/40 rounded-xl border border-emerald-800/60">
+              <div className="text-emerald-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                <span>📑 Office Clerk / In-charge</span>
+              </div>
+              <div className="text-base font-bold text-emerald-100 mt-0.5">Mr. Altaf Ahmad (Mohd Altaf)</div>
+              <div className="text-stone-300 text-[11px] mt-0.5">Master · Institutional Admissions, Service Books & ZEO Shangus Desk</div>
+            </div>
+
+            {/* Sports In-charge */}
+            <div className="p-3.5 bg-orange-950/40 rounded-xl border border-orange-800/60">
+              <div className="text-orange-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                <span>🏆 Sports In-charge</span>
+              </div>
+              <div className="text-base font-bold text-orange-100 mt-0.5">Mr. Mohd Anzar Khan (Anzar Ahmad)</div>
+              <div className="text-stone-300 text-[11px] mt-0.5">Teacher · Inter-School Athletic Meets, Volleyball, Cricket & PT</div>
+            </div>
+
+            {/* ICT & Exam In-charge */}
+            <div className="p-3.5 bg-sky-950/40 rounded-xl border border-sky-800/60">
+              <div className="text-sky-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                <span>💻 ICT & Exam In-charge</span>
+              </div>
+              <div className="text-base font-bold text-sky-100 mt-0.5">Mr. Tahir Ahmad Kumar</div>
+              <div className="text-stone-300 text-[11px] mt-0.5">Teacher · Math Teacher (M.Sc. Math), Computer Lab & JKBOSE Cell</div>
+            </div>
+
+            {/* Science Lab In-charge */}
+            <div className="p-3.5 bg-teal-950/40 rounded-xl border border-teal-800/60">
+              <div className="text-teal-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                <span>🔬 Science Lab In-charge</span>
+              </div>
+              <div className="text-base font-bold text-teal-100 mt-0.5">Mr. Ajaz Ahmad Wani</div>
+              <div className="text-stone-300 text-[11px] mt-0.5">Science Teacher · Composite Science Lab, Practical Sessions & STEM Experiments</div>
+            </div>
+          </div>
+        </div>
+
         {/* Faculty and Staff Cadre Roster */}
         <div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
@@ -204,7 +284,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                 Official Faculty & Staff Cadre (12 Members)
               </h3>
               <p className="text-xs text-stone-500 mt-0.5">
-                Headmaster Mr. Shareef Ahmad Khan (S.No 1) · Masters Cadre (S.No 2 to 8) · Teachers Cadre (S.No 9 to 12) · Institutional Support (S.No 13)
+                Zone: Shangus · Headmaster Mr. Shareef Ahmad Khan (S.No 1) · Masters Cadre (S.No 2 to 8) · Teachers Cadre (S.No 9 to 12) · Institutional Support (S.No 13)
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -268,7 +348,12 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
             {filteredFaculty.map((member) => {
               const isMaster = member.slotNumber >= 2 && member.slotNumber <= 8;
               const isTeacher = member.slotNumber >= 9 && member.slotNumber <= 12;
+              const isSlot3Rafique = member.slotNumber === 3;
               const isSlot7Muzzaffer = member.slotNumber === 7;
+              const isSlot8Altaf = member.slotNumber === 8;
+              const isSlot9Ajaz = member.slotNumber === 9;
+              const isSlot10Anzar = member.slotNumber === 10;
+              const isSlot11Muzzafer = member.slotNumber === 11;
               const isTahirKumar = member.name.includes('Tahir Ahmad Kumar');
 
               return (
@@ -276,9 +361,19 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                   key={member.id}
                   className={`rounded-xl border p-5 flex flex-col justify-between transition-all shadow-2xs ${
                     isSlot7Muzzaffer
-                      ? 'bg-amber-50/50 border-amber-300 ring-1 ring-amber-300/60'
+                      ? 'bg-amber-50/60 border-amber-300 ring-1 ring-amber-300/60'
+                      : isSlot3Rafique
+                      ? 'bg-indigo-50/50 border-indigo-200 ring-1 ring-indigo-200/60'
+                      : isSlot8Altaf
+                      ? 'bg-emerald-50/50 border-emerald-200 ring-1 ring-emerald-200/60'
+                      : isSlot9Ajaz
+                      ? 'bg-teal-50/50 border-teal-300 ring-1 ring-teal-300/60'
+                      : isSlot10Anzar
+                      ? 'bg-orange-50/50 border-orange-200 ring-1 ring-orange-200/60'
+                      : isSlot11Muzzafer
+                      ? 'bg-teal-50/40 border-teal-200'
                       : isTahirKumar
-                      ? 'bg-sky-50/40 border-sky-300 ring-1 ring-sky-300/60'
+                      ? 'bg-sky-50/50 border-sky-300 ring-1 ring-sky-300/60'
                       : isMaster
                       ? 'bg-stone-50 border-amber-200/80 hover:border-amber-400'
                       : 'bg-stone-50 border-stone-200 hover:border-emerald-700/40'
@@ -287,11 +382,36 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                   <div>
                     {/* Header Slot & Badges */}
                     <div className="flex items-center justify-between gap-2 text-xs font-mono text-stone-500 mb-2">
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex items-center gap-1.5 flex-wrap">
                         <span className="text-emerald-900 font-bold">Slot #{member.slotNumber}</span>
                         {isSlot7Muzzaffer && (
                           <span className="bg-amber-200 text-amber-900 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
-                            Newly Added Master
+                            PM SHRI In-charge
+                          </span>
+                        )}
+                        {isSlot3Rafique && (
+                          <span className="bg-indigo-100 text-indigo-900 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
+                            Samagra In-charge
+                          </span>
+                        )}
+                        {isSlot8Altaf && (
+                          <span className="bg-emerald-100 text-emerald-900 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
+                            Office Clerk
+                          </span>
+                        )}
+                        {isSlot9Ajaz && (
+                          <span className="bg-teal-200 text-teal-950 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
+                            Science Lab In-charge
+                          </span>
+                        )}
+                        {isSlot10Anzar && (
+                          <span className="bg-orange-100 text-orange-900 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
+                            Sports In-charge
+                          </span>
+                        )}
+                        {isSlot11Muzzafer && (
+                          <span className="bg-teal-100 text-teal-900 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
+                            Science Teacher
                           </span>
                         )}
                       </div>
@@ -332,6 +452,73 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                       {member.department}
                     </div>
 
+                    {/* Specific In-Charge Portfolio Banners */}
+                    {isSlot7Muzzaffer && (
+                      <div className="mb-3 p-2 bg-amber-100/80 border border-amber-300 rounded-lg text-xs">
+                        <span className="font-bold text-amber-950 flex items-center gap-1">
+                          ⭐ Assigned Role: PM SHRI In-charge
+                        </span>
+                        <p className="text-[11px] text-amber-900 mt-0.5">
+                          Directs the 16 PM SHRI development domains, Green School audits, and NEP 2020 quality interventions.
+                        </p>
+                      </div>
+                    )}
+
+                    {isSlot3Rafique && (
+                      <div className="mb-3 p-2 bg-indigo-50 border border-indigo-200 rounded-lg text-xs">
+                        <span className="font-bold text-indigo-950 flex items-center gap-1">
+                          📚 Assigned Role: Samagra Shiksha In-charge
+                        </span>
+                        <p className="text-[11px] text-indigo-900 mt-0.5">
+                          Manages Samagra flagship schemes, civil & pedagogical grants, and free textbook/uniform distribution.
+                        </p>
+                      </div>
+                    )}
+
+                    {isSlot8Altaf && (
+                      <div className="mb-3 p-2 bg-emerald-50 border border-emerald-300 rounded-lg text-xs">
+                        <span className="font-bold text-emerald-950 flex items-center gap-1">
+                          📑 Assigned Role: Office Clerk / In-charge
+                        </span>
+                        <p className="text-[11px] text-emerald-900 mt-0.5">
+                          Handles admissions register, official correspondence with ZEO Shangus & CEO Anantnag, and service records.
+                        </p>
+                      </div>
+                    )}
+
+                    {isSlot9Ajaz && (
+                      <div className="mb-3 p-2 bg-teal-50 border border-teal-200 rounded-lg text-xs">
+                        <span className="font-bold text-teal-950 flex items-center gap-1">
+                          🔬 Assigned Role: Science Lab In-charge & Science Teacher
+                        </span>
+                        <p className="text-[11px] text-teal-900 mt-0.5">
+                          Directs the composite science laboratory, manages experimental kits and apparatus, laboratory safety protocols, and STEM inquiry.
+                        </p>
+                      </div>
+                    )}
+
+                    {isSlot10Anzar && (
+                      <div className="mb-3 p-2 bg-orange-50 border border-orange-200 rounded-lg text-xs">
+                        <span className="font-bold text-orange-950 flex items-center gap-1">
+                          🏆 Assigned Role: Sports In-charge
+                        </span>
+                        <p className="text-[11px] text-orange-900 mt-0.5">
+                          Organizes inter-school athletic tournaments, daily sports drills, volleyball, cricket meets, and physical fitness.
+                        </p>
+                      </div>
+                    )}
+
+                    {isSlot11Muzzafer && (
+                      <div className="mb-3 p-2 bg-teal-50/70 border border-teal-200 rounded-lg text-xs">
+                        <span className="font-bold text-teal-950 flex items-center gap-1">
+                          🔬 Assigned Role: Science Teacher
+                        </span>
+                        <p className="text-[11px] text-teal-900 mt-0.5">
+                          Delivering secondary and middle-wing core science curriculum, interactive experiments, and promoting scientific curiosity.
+                        </p>
+                      </div>
+                    )}
+
                     {/* Tahir Ahmad Kumar Special Multi-Role Pills */}
                     {isTahirKumar && (
                       <div className="mb-3 p-2.5 bg-sky-100/70 rounded-lg border border-sky-200 text-xs space-y-1">
@@ -347,6 +534,9 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                           </span>
                           <span className="px-2 py-0.5 bg-white text-sky-900 border border-sky-300 rounded text-[11px] font-semibold">
                             📝 Examination In-charge
+                          </span>
+                          <span className="px-2 py-0.5 bg-white text-emerald-900 border border-emerald-300 rounded text-[11px] font-semibold">
+                            🎓 M.Sc. Math, B.Ed.
                           </span>
                         </div>
                       </div>
@@ -379,7 +569,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
           </div>
 
           <div className="mt-8 p-4 bg-stone-100 rounded-lg text-xs text-stone-600 text-center leading-relaxed">
-            <strong>Institutional Cadre Summary:</strong> PM SHRI Govt High School Chowgam cadre is led by Headmaster Mr. Shareef Ahmad Khan (S.No 1), supported by Masters (S.No 2 to 8: Mr. Ab Raheem Shairgojri, Mr. Gh Mohd Rafique, Mr. Nazir Ahmad Khan, Mr. Gulzar Ahmad Khan, Mr. Ab Rashid Wani, Mr. Muzzaffer Ahmad Khan, Mr. Mohd Altaf Malik), Teachers (S.No 9 to 12: Mr. Ajaz Ahmad Wani, Mr. Mohd Anzar Khan, Mr. Muzzafer Rasool Malik, Mr. Tahir Ahmad Kumar [ICT & Exam In-charge, M.Sc. Math]), and Office Support (S.No 13).
+            <strong>Institutional Cadre Summary (Zone Shangus):</strong> PM SHRI Govt High School Chowgam is led by Headmaster Mr. Shareef Ahmad Khan (S.No 1), supported by Masters (S.No 2 to 8: Mr. Ab Raheem Shairgojri, Mr. Gh Mohd Rafique [Samagra In-charge], Mr. Nazir Ahmad Khan, Mr. Gulzar Ahmad Khan, Mr. Ab Rashid Wani, Mr. Muzzaffer Ahmad Khan [PM SHRI In-charge], Mr. Altaf Ahmad [Office Clerk]), Teachers (S.No 9 to 12: Mr. Ajaz Ahmad Wani [Science Lab In-charge], Mr. Mohd Anzar Khan [Sports In-charge], Mr. Muzzafer Rasool Malik [Science Teacher], Mr. Tahir Ahmad Kumar [ICT & Exam In-charge, Math Teacher, M.Sc. Math]), and Office Desk (S.No 13).
           </div>
         </div>
 

@@ -83,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-emerald-300 tracking-wider mb-4 flex-wrap justify-center">
             <span>GOVERNMENT OF JAMMU & KASHMIR</span>
             <span aria-hidden="true">·</span>
-            <span>ZONE: SHANGLUS</span>
+            <span>ZONE: SHANGUS</span>
             <span aria-hidden="true">·</span>
             <span>DISTT: ANANTNAG</span>
             <span aria-hidden="true">·</span>
