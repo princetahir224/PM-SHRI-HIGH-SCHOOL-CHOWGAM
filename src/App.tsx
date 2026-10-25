@@ -44,11 +44,18 @@ export default function App() {
       const saved = localStorage.getItem('pmshri_staff');
       if (saved) {
         const parsed = JSON.parse(saved);
-        // If saved data has old placeholders, refresh with updated INITIAL_STAFF_MEMBERS
+        // Check if saved data has old placeholders or lacks S.No 7 Mr. Muzzaffer Ahmad Khan / updated designations
         const hasOldPlaceholders = parsed.some((s: StaffMember) => 
           s.name.includes('[Staff Member') || s.name.includes('[Headmaster') || s.name.includes('Configurable')
         );
-        if (hasOldPlaceholders) {
+        const hasSlot7Muzzaffer = parsed.some((s: StaffMember) => 
+          s.slotNumber === 7 && s.name.includes('Muzzaffer Ahmad Khan') && s.designation === 'Master'
+        );
+        const hasUpdatedTahir = parsed.some((s: StaffMember) =>
+          s.name.includes('Tahir Ahmad Kumar') && s.qualifications.includes('M.Sc. Math')
+        );
+
+        if (hasOldPlaceholders || !hasSlot7Muzzaffer || !hasUpdatedTahir) {
           localStorage.setItem('pmshri_staff', JSON.stringify(INITIAL_STAFF_MEMBERS));
           return INITIAL_STAFF_MEMBERS;
         }

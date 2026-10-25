@@ -149,7 +149,7 @@ export const DigitalAndLibrarySection: React.FC = () => {
               </div>
 
               <div className="mt-8 pt-4 border-t border-stone-200 flex items-center justify-between text-xs text-stone-500">
-                <span>Managed by Dedicated ICT In-charge</span>
+                <span>ICT In-charge: <strong className="text-stone-800">Mr. Tahir Ahmad Kumar</strong> (Teacher & Examination In-charge)</span>
                 <span className="font-mono text-emerald-800">1:1 Student Workstations</span>
               </div>
             </div>

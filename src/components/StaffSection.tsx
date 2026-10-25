@@ -25,10 +25,17 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
   onOpenAdmin,
   onEditStaff
 }) => {
-  const [selectedStaff, setSelectedStaff] = useState<StaffMember | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'masters' | 'teachers' | 'support'>('all');
 
   const hoi = staffList.find(s => s.isHOI) || staffList[0];
   const faculty = staffList.filter(s => !s.isHOI);
+
+  const filteredFaculty = faculty.filter(member => {
+    if (selectedCategory === 'masters') return member.slotNumber >= 2 && member.slotNumber <= 8;
+    if (selectedCategory === 'teachers') return member.slotNumber >= 9 && member.slotNumber <= 12;
+    if (selectedCategory === 'support') return member.slotNumber === 13;
+    return true;
+  });
 
   return (
     <section id="staff" className="py-16 sm:py-24 bg-white border-b border-stone-200">
@@ -189,77 +196,190 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
           </div>
         </div>
 
-        {/* 12 Staff Member Cards (Transparent, Verified Slots with Official Staff Names) */}
+        {/* Faculty and Staff Cadre Roster */}
         <div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
               <h3 className="text-lg font-bold text-stone-900">
-                Dedicated Faculty & Support Staff (12 Members)
+                Official Faculty & Staff Cadre (12 Members)
               </h3>
               <p className="text-xs text-stone-500 mt-0.5">
-                Official staff roster of PM SHRI Govt High School Chowgam under Headmaster Mr. Shareef Ahmad Khan.
+                Headmaster Mr. Shareef Ahmad Khan (S.No 1) · Masters Cadre (S.No 2 to 8) · Teachers Cadre (S.No 9 to 12) · Institutional Support (S.No 13)
               </p>
             </div>
-            <span className="text-xs text-stone-600 font-mono bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">
-              Total Staff: <strong className="text-stone-900">13 (Verified Cadre)</strong>
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-amber-900 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-medium">
+                7 Masters
+              </span>
+              <span className="text-xs text-sky-900 bg-sky-50 px-2.5 py-1 rounded-md border border-sky-200 font-medium">
+                4 Teachers
+              </span>
+              <span className="text-xs text-stone-700 bg-stone-100 px-2.5 py-1 rounded-md border border-stone-200 font-medium">
+                1 Support
+              </span>
+            </div>
+          </div>
+
+          {/* Cadre Filter Buttons */}
+          <div className="flex flex-wrap items-center gap-2 mb-6 pb-2 border-b border-stone-200 text-xs">
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
+                selectedCategory === 'all'
+                  ? 'bg-emerald-900 text-white shadow-xs'
+                  : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+              }`}
+            >
+              All Staff (12)
+            </button>
+            <button
+              onClick={() => setSelectedCategory('masters')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
+                selectedCategory === 'masters'
+                  ? 'bg-amber-700 text-white shadow-xs'
+                  : 'bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100'
+              }`}
+            >
+              Masters (S.No 2 to 8)
+            </button>
+            <button
+              onClick={() => setSelectedCategory('teachers')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
+                selectedCategory === 'teachers'
+                  ? 'bg-sky-700 text-white shadow-xs'
+                  : 'bg-sky-50 text-sky-800 border border-sky-200 hover:bg-sky-100'
+              }`}
+            >
+              Teachers (S.No 9 to 12)
+            </button>
+            <button
+              onClick={() => setSelectedCategory('support')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
+                selectedCategory === 'support'
+                  ? 'bg-stone-700 text-white shadow-xs'
+                  : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+              }`}
+            >
+              Support Official (S.No 13)
+            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {faculty.map((member) => (
-              <div
-                key={member.id}
-                className="bg-stone-50 rounded-xl border border-stone-200 p-5 flex flex-col justify-between hover:border-emerald-700/40 hover:shadow-sm transition-all shadow-2xs"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 text-xs font-mono text-stone-500 mb-2">
-                    <span className="text-emerald-800 font-bold">Staff Slot #{member.slotNumber}</span>
-                    <span className={`text-[11px] px-2 py-0.5 rounded font-semibold ${
-                      member.status === 'Verified Staff' 
-                        ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' 
-                        : 'bg-stone-200 text-stone-700'
-                    }`}>
-                      {member.status}
+            {filteredFaculty.map((member) => {
+              const isMaster = member.slotNumber >= 2 && member.slotNumber <= 8;
+              const isTeacher = member.slotNumber >= 9 && member.slotNumber <= 12;
+              const isSlot7Muzzaffer = member.slotNumber === 7;
+              const isTahirKumar = member.name.includes('Tahir Ahmad Kumar');
+
+              return (
+                <div
+                  key={member.id}
+                  className={`rounded-xl border p-5 flex flex-col justify-between transition-all shadow-2xs ${
+                    isSlot7Muzzaffer
+                      ? 'bg-amber-50/50 border-amber-300 ring-1 ring-amber-300/60'
+                      : isTahirKumar
+                      ? 'bg-sky-50/40 border-sky-300 ring-1 ring-sky-300/60'
+                      : isMaster
+                      ? 'bg-stone-50 border-amber-200/80 hover:border-amber-400'
+                      : 'bg-stone-50 border-stone-200 hover:border-emerald-700/40'
+                  }`}
+                >
+                  <div>
+                    {/* Header Slot & Badges */}
+                    <div className="flex items-center justify-between gap-2 text-xs font-mono text-stone-500 mb-2">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-emerald-900 font-bold">Slot #{member.slotNumber}</span>
+                        {isSlot7Muzzaffer && (
+                          <span className="bg-amber-200 text-amber-900 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
+                            Newly Added Master
+                          </span>
+                        )}
+                      </div>
+                      
+                      {isMaster ? (
+                        <span className="text-[11px] px-2 py-0.5 rounded font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                          Master Cadre
+                        </span>
+                      ) : isTeacher ? (
+                        <span className="text-[11px] px-2 py-0.5 rounded font-bold bg-sky-100 text-sky-900 border border-sky-300">
+                          Teacher Cadre
+                        </span>
+                      ) : (
+                        <span className="text-[11px] px-2 py-0.5 rounded font-semibold bg-stone-200 text-stone-700">
+                          Support Cadre
+                        </span>
+                      )}
+                    </div>
+
+                    <h4 className="text-base font-bold text-stone-900 mb-0.5 flex items-center justify-between">
+                      <span>{member.name}</span>
+                    </h4>
+
+                    {/* Official Designation */}
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded ${
+                        isMaster 
+                          ? 'bg-amber-100 text-amber-950 border border-amber-200' 
+                          : isTeacher 
+                          ? 'bg-sky-100 text-sky-950 border border-sky-200' 
+                          : 'bg-stone-100 text-stone-800'
+                      }`}>
+                        Designation: {member.designation}
+                      </span>
+                    </div>
+
+                    <div className="text-xs text-emerald-800 font-medium mb-3">
+                      {member.department}
+                    </div>
+
+                    {/* Tahir Ahmad Kumar Special Multi-Role Pills */}
+                    {isTahirKumar && (
+                      <div className="mb-3 p-2.5 bg-sky-100/70 rounded-lg border border-sky-200 text-xs space-y-1">
+                        <div className="text-[11px] font-bold text-sky-950 uppercase tracking-wider mb-1">
+                          Assigned In-charge Responsibilities:
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          <span className="px-2 py-0.5 bg-white text-sky-900 border border-sky-300 rounded text-[11px] font-semibold">
+                            📐 Mathematics Teacher
+                          </span>
+                          <span className="px-2 py-0.5 bg-white text-sky-900 border border-sky-300 rounded text-[11px] font-semibold">
+                            💻 ICT In-charge
+                          </span>
+                          <span className="px-2 py-0.5 bg-white text-sky-900 border border-sky-300 rounded text-[11px] font-semibold">
+                            📝 Examination In-charge
+                          </span>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="text-xs text-stone-600 mb-2">
+                      <span className="text-stone-400">Qual: </span>
+                      <span className="font-mono text-stone-900 font-semibold">{member.qualifications}</span>
+                    </div>
+
+                    <p className="text-xs text-stone-600 leading-relaxed mb-4">
+                      {member.responsibilities}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-stone-200/70 flex items-center justify-between text-xs">
+                    <span className="text-[11px] text-stone-500 font-mono">
+                      {isMaster ? 'Master Cadre' : isTeacher ? 'Teacher Cadre' : 'Official Cadre'}
                     </span>
+                    <button
+                      onClick={() => onEditStaff(member)}
+                      className="text-emerald-900 hover:text-emerald-700 font-semibold underline text-xs"
+                    >
+                      Edit Record
+                    </button>
                   </div>
-
-                  <h4 className="text-base font-bold text-stone-900 mb-0.5 flex items-center gap-1.5">
-                    {member.name}
-                  </h4>
-
-                  <div className="text-xs font-semibold text-stone-700 mb-1">
-                    {member.designation}
-                  </div>
-
-                  <div className="text-xs text-emerald-800 font-medium mb-3">
-                    {member.department}
-                  </div>
-
-                  <div className="text-xs text-stone-600 mb-2">
-                    <span className="text-stone-400">Qual: </span>
-                    <span className="font-mono text-stone-800 font-medium">{member.qualifications}</span>
-                  </div>
-
-                  <p className="text-xs text-stone-500 leading-relaxed mb-4">
-                    {member.responsibilities}
-                  </p>
                 </div>
-
-                <div className="pt-3 border-t border-stone-200/70 flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-stone-400 font-mono">PM SHRI GHS Chowgam</span>
-                  <button
-                    onClick={() => onEditStaff(member)}
-                    className="text-emerald-900 hover:text-emerald-700 font-semibold underline text-xs"
-                  >
-                    Edit Record
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-8 p-4 bg-stone-100 rounded-lg text-xs text-stone-600 text-center leading-relaxed">
-            <strong>Transparency Notice:</strong> Staff names and duties reflect the official institutional roster of PM SHRI Govt High School Chowgam (Zone Shanglus, Dist. Anantnag). Authorized staff administrators can update responsibilities through the administration console.
+            <strong>Institutional Cadre Summary:</strong> PM SHRI Govt High School Chowgam cadre is led by Headmaster Mr. Shareef Ahmad Khan (S.No 1), supported by Masters (S.No 2 to 8: Mr. Ab Raheem Shairgojri, Mr. Gh Mohd Rafique, Mr. Nazir Ahmad Khan, Mr. Gulzar Ahmad Khan, Mr. Ab Rashid Wani, Mr. Muzzaffer Ahmad Khan, Mr. Mohd Altaf Malik), Teachers (S.No 9 to 12: Mr. Ajaz Ahmad Wani, Mr. Mohd Anzar Khan, Mr. Muzzafer Rasool Malik, Mr. Tahir Ahmad Kumar [ICT & Exam In-charge, M.Sc. Math]), and Office Support (S.No 13).
           </div>
         </div>
 
