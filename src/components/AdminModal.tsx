@@ -263,6 +263,13 @@ export const AdminModal: React.FC<AdminModalProps> = ({
                         placeholder="Qualifications (e.g. M.Sc, B.Ed)"
                         className="w-full bg-stone-50 border border-stone-200 rounded p-1.5 text-xs text-stone-700 focus:outline-none focus:border-emerald-700"
                       />
+                      <input
+                        type="text"
+                        value={member.phone || ''}
+                        onChange={(e) => handleStaffChange(member.id, 'phone', e.target.value)}
+                        placeholder="Official Phone (e.g. 7889635278)"
+                        className="w-full bg-stone-50 border border-stone-200 rounded p-1.5 text-xs text-stone-700 focus:outline-none focus:border-emerald-700"
+                      />
                     </div>
                   </div>
                 ))}

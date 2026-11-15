@@ -6,6 +6,8 @@ export const SCHOOL_IMAGES = {
   morningAssembly: "/assets/aistudio/Mountain_School_Assembly_in_the_Highlands__1__e0e8233f.png",
   // Official uploaded photograph of the Headmaster
   headmaster: "/assets/aistudio/Headmaster_s_Formal_School_Office_Portrait_43a7726c.png",
+  // Official uploaded photograph of the Exposure Visit to IIT / ITI Anantnag
+  exposureVisitIitAnantnag: "/assets/aistudio/WhatsApp_Image_2026-11-15_at_6.13.03_PM__1__40808ebe.jpeg",
   smartClassroom: "/src/assets/images/smart_classroom_ict_1792911690664.jpg",
   library: "/src/assets/images/school_library_reading_1792911691547.jpg",
   greenCampus: "/src/assets/images/green_campus_valley_1792911692015.jpg",
@@ -13,6 +15,13 @@ export const SCHOOL_IMAGES = {
 };
 
 export const GALLERY_ITEMS = [
+  {
+    id: "gal-exposure-iit-anantnag",
+    title: "Exposure Visit to IIT / ITI Anantnag (Ashajipora, J&K)",
+    category: "Exposure Visits",
+    image: "/assets/aistudio/WhatsApp_Image_2026-11-15_at_6.13.03_PM__1__40808ebe.jpeg",
+    caption: "Students and faculty members of PM SHRI Govt High School Chowgam during the educational and skill-exposure visit to Industrial Training Institute (IIT / ITI) Anantnag, Ashajipora, J&K."
+  },
   {
     id: "gal-assembly",
     title: "Daily Morning Assembly in the Highlands — PM SHRI GHS Chowgam",

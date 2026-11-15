@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, ThinkingLevel, Type } from '@google/genai';
 
 dotenv.config();
 
@@ -135,11 +135,11 @@ async function startServer() {
       if (ai) {
         // Query Gemini with timeout fallback
         const aiPromise = ai.models.generateContent({
-          model: 'gemini-3.8-flash',
+          model: 'gemini-4-hydrogen',
           contents: `You are the Official "Desk of Kashmir" Educational Intelligence Advisor for PM SHRI Govt High School Chowgam and Kashmir Division school students.
 Topic of Inquiry: "${userQuestion}"
 Context:
-- School: PM SHRI Govt High School Chowgam (Zone Shangas / Shanglus, Dist. Anantnag, J&K).
+- School: PM SHRI Govt High School Chowgam (Zone Shangus, Dist. Anantnag, J&K).
 - Educational Authorities: Jammu and Kashmir Board of School Education (JKBOSE) & Directorate of School Education Kashmir (DSEK).
 - Standards: National Education Policy (NEP) 2020 & PM SHRI framework.
 - Grade Focus: Classes 6th to 10th (Secondary Matriculation).
@@ -149,11 +149,14 @@ Provide a structured, authoritative, concise response in clean markdown covering
 2. **Key Guidelines for Students & Parents**
 3. **Important Deadlines or Action Steps**
 4. **School Administration Note** (from Head of Institution desk)`,
+          config: {
+            thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+          },
         });
 
-        // 12-second timeout
+        // 15-second timeout
         const timeoutPromise = new Promise<never>((_, reject) => 
-          setTimeout(() => reject(new Error('AI request timed out')), 12000)
+          setTimeout(() => reject(new Error('AI request timed out')), 15000)
         );
 
         try {
@@ -164,7 +167,7 @@ Provide a structured, authoritative, concise response in clean markdown covering
             success: true,
             answer: answerText,
             timestamp: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
-            source: "Google Gemini 3.8 Flash Educational Intelligence Model"
+            source: "Gemini 4 Hydrogen Educational Intelligence Model"
           });
         } catch (callErr: any) {
           console.warn("Gemini call timed out or failed, serving verified Kashmir desk baseline:", callErr?.message);
@@ -216,6 +219,180 @@ For specific verification inquiries, parents and students may directly contact H
         success: false,
         error: "Failed to generate educational updates from the intelligence desk.",
         details: err?.message
+      });
+    }
+  });
+
+  // 4. POST /api/ai-tutor/ask - Interactive AI Tutor Q&A for Students (Classes 6 to 10)
+  app.post('/api/ai-tutor/ask', async (req: Request, res: Response) => {
+    try {
+      const {
+        question,
+        studentClass = 'Class 8',
+        subject = 'Mathematics',
+        mode = 'explain',
+        history = []
+      } = req.body || {};
+
+      if (!question || typeof question !== 'string' || !question.trim()) {
+        return res.status(400).json({
+          success: false,
+          error: 'Please enter a question for the AI Tutor.'
+        });
+      }
+
+      if (!ai) {
+        return res.status(503).json({
+          success: false,
+          error: 'AI Tutor service is not configured yet. Please check the Gemini API key in Settings > Secrets.'
+        });
+      }
+
+      const modeInstructions: Record<string, string> = {
+        'explain': 'Give a clear, friendly, student-ready explanation suitable for the requested grade level, with 1 simple real-world example.',
+        'step-by-step': 'Break the answer into numbered step-by-step solution stages showing every formula, substitution, and final check clearly.',
+        'exam-notes': 'Provide concise JKBOSE / NCERT exam-ready revision points: Key Definition, Formula/Concept, Common Mistake to Avoid, and 1 Practice Question.'
+      };
+
+      const systemInstruction = `You are the PM SHRI Govt High School Chowgam AI Study Tutor (Zone Shangus, District Anantnag, J&K), supporting Classes 6th to 10th students following the JKBOSE & NCERT curriculum under NEP 2020.
+Student Profile: ${studentClass} · Subject: ${subject}.
+Teaching Approach: ${modeInstructions[mode] || modeInstructions['explain']}
+Keep answers accurate, encouraging, structured in clean markdown (short paragraphs, numbered steps, clear formulas), and under 350 words unless a full derivation is needed. End with one quick follow-up check question to keep the student engaged.`;
+
+      const validHistory = Array.isArray(history)
+        ? history
+            .filter((m: any) => m && (m.role === 'user' || m.role === 'model') && typeof m.text === 'string' && m.text.trim())
+            .slice(-8)
+            .map((m: any) => ({
+              role: m.role as 'user' | 'model',
+              parts: [{ text: m.text }]
+            }))
+        : [];
+
+      const chat = ai.chats.create({
+        model: 'gemini-4-hydrogen',
+        history: validHistory,
+        config: {
+          systemInstruction,
+          thinkingConfig: { thinkingLevel: ThinkingLevel.LOW }
+        }
+      });
+
+      const response = await chat.sendMessage({ message: question.trim() });
+      const answerText = response.text;
+
+      if (!answerText) {
+        return res.status(502).json({
+          success: false,
+          error: 'The AI Tutor did not return a response. Please try phrasing your question again.'
+        });
+      }
+
+      return res.json({
+        success: true,
+        answer: answerText,
+        timestamp: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      });
+    } catch (err: any) {
+      console.error('Error in /api/ai-tutor/ask:', err);
+      const status = err?.status && Number.isInteger(err.status) ? err.status : 500;
+      let message = err?.message || 'Unable to reach AI Tutor right now.';
+      if (status === 403 || status === 400) {
+        message = 'Please verify your Gemini API key in Settings > Secrets.';
+      } else if (status === 429) {
+        message = 'AI Tutor rate limit reached. Please wait a moment and try again.';
+      }
+      return res.status(status).json({
+        success: false,
+        error: message
+      });
+    }
+  });
+
+  // 5. POST /api/ai-tutor/quiz - Interactive Practice Questionnaire Generator
+  app.post('/api/ai-tutor/quiz', async (req: Request, res: Response) => {
+    try {
+      const {
+        studentClass = 'Class 8',
+        subject = 'Science',
+        topic = 'Core Concepts',
+        questionCount = 5
+      } = req.body || {};
+
+      if (!ai) {
+        return res.status(503).json({
+          success: false,
+          error: 'AI Tutor questionnaire generator is not configured yet. Please check the Gemini API key in Settings > Secrets.'
+        });
+      }
+
+      const count = Math.min(Math.max(Number(questionCount) || 5, 3), 8);
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-4-hydrogen',
+        contents: `Generate ${count} NCERT / JKBOSE curriculum practice questionnaire items for ${studentClass} students in ${subject} on the topic: "${topic}".
+Ensure questions test real conceptual understanding appropriate for ${studentClass} in Jammu & Kashmir schools, with unambiguous single-best answers and supportive explanations.`,
+        config: {
+          systemInstruction: `You are an experienced JKBOSE / NCERT subject teacher at PM SHRI Govt High School Chowgam creating a practice questionnaire for students.`,
+          thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+          responseMimeType: 'application/json',
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              questions: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    id: { type: Type.INTEGER, description: 'Question number starting at 1' },
+                    question: { type: Type.STRING, description: 'Clear question prompt for the student' },
+                    options: {
+                      type: Type.ARRAY,
+                      items: { type: Type.STRING },
+                      description: 'Exactly 4 answer choices'
+                    },
+                    correctIndex: { type: Type.INTEGER, description: 'Zero-based index (0 to 3) of the correct option' },
+                    hint: { type: Type.STRING, description: 'A gentle hint without giving away the final answer' },
+                    explanation: { type: Type.STRING, description: 'Concise step-by-step explanation of why the correct option is right' }
+                  },
+                  required: ['id', 'question', 'options', 'correctIndex', 'hint', 'explanation']
+                }
+              }
+            },
+            required: ['questions']
+          }
+        }
+      });
+
+      const rawText = (response.text ?? '{}').trim();
+      const parsed = JSON.parse(rawText);
+
+      if (!parsed.questions || !Array.isArray(parsed.questions) || parsed.questions.length === 0) {
+        return res.status(502).json({
+          success: false,
+          error: 'Could not generate structured questionnaire questions. Please try another topic.'
+        });
+      }
+
+      return res.json({
+        success: true,
+        studentClass,
+        subject,
+        topic,
+        questions: parsed.questions
+      });
+    } catch (err: any) {
+      console.error('Error in /api/ai-tutor/quiz:', err);
+      const status = err?.status && Number.isInteger(err.status) ? err.status : 500;
+      let message = err?.message || 'Unable to generate practice questionnaire.';
+      if (status === 403 || status === 400) {
+        message = 'Please verify your Gemini API key in Settings > Secrets.';
+      } else if (status === 429) {
+        message = 'AI Tutor rate limit reached. Please wait a moment and try again.';
+      }
+      return res.status(status).json({
+        success: false,
+        error: message
       });
     }
   });

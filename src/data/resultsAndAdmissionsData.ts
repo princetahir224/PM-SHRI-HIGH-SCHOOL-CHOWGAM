@@ -10,7 +10,8 @@ export interface StudentResult {
   rollNo: string;
   regNo?: string;
   studentName: string;
-  parentName: string;
+  parentName?: string;
+  meritPosition?: string;
   studentClass: 'Class 6' | 'Class 7' | 'Class 8' | 'Class 9' | 'Class 10';
   academicYear: string;
   examTerm: 'Annual Examination' | 'Term 1 (T1)' | 'Term 2 (T2)' | 'Unit Assessment' | 'Golden Test (Board Prep)';
@@ -60,178 +61,153 @@ export interface AdmissionApplication {
 
 export const INITIAL_RESULTS: StudentResult[] = [
   {
-    id: "res-1001",
-    rollNo: "1001",
-    regNo: "JK-GHS-CHW-10-2026-01",
-    studentName: "Danish Ahmad Dar",
-    parentName: "Bashir Ahmad Dar",
-    studentClass: "Class 10",
-    academicYear: "2025–26",
-    examTerm: "Golden Test (Board Prep)",
-    datePublished: "October 18, 2026",
-    subjects: [
-      { subject: "General English", maxMarks: 100, marksObtained: 88, grade: "A2" },
-      { subject: "Mathematics", maxMarks: 100, marksObtained: 94, grade: "A1" },
-      { subject: "Science & Technology", maxMarks: 100, marksObtained: 91, grade: "A1" },
-      { subject: "Social Science", maxMarks: 100, marksObtained: 85, grade: "A2" },
-      { subject: "Urdu / Regional Language", maxMarks: 100, marksObtained: 87, grade: "A2" }
-    ],
-    totalMarks: 445,
-    maxMarks: 500,
-    percentage: 89.0,
-    overallGrade: "A1",
-    status: "PASS",
-    remarks: "Outstanding conceptual clarity in Mathematics and Science laboratory practicals. High potential for JKBOSE board excellence.",
-    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge) & Mr. Shareef Ahmad Khan (HOI)"
-  },
-  {
-    id: "res-1002",
-    rollNo: "1002",
-    regNo: "JK-GHS-CHW-10-2026-02",
-    studentName: "Iqra Jan",
-    parentName: "Ghulam Nabi Rather",
-    studentClass: "Class 10",
-    academicYear: "2025–26",
-    examTerm: "Golden Test (Board Prep)",
-    datePublished: "October 18, 2026",
-    subjects: [
-      { subject: "General English", maxMarks: 100, marksObtained: 92, grade: "A1" },
-      { subject: "Mathematics", maxMarks: 100, marksObtained: 86, grade: "A2" },
-      { subject: "Science & Technology", maxMarks: 100, marksObtained: 89, grade: "A2" },
-      { subject: "Social Science", maxMarks: 100, marksObtained: 90, grade: "A1" },
-      { subject: "Urdu / Regional Language", maxMarks: 100, marksObtained: 91, grade: "A1" }
-    ],
-    totalMarks: 448,
-    maxMarks: 500,
-    percentage: 89.6,
-    overallGrade: "A1",
-    status: "PASS",
-    remarks: "Exceptional language command, neat analytical presentations, and consistent academic leadership.",
-    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge) & Mr. Shareef Ahmad Khan (HOI)"
-  },
-  {
-    id: "res-901",
-    rollNo: "901",
-    regNo: "JK-GHS-CHW-09-2026-01",
-    studentName: "Sahil Ahmad Lone",
-    parentName: "Mohammad Ashraf Lone",
-    studentClass: "Class 9",
-    academicYear: "2025–26",
-    examTerm: "Term 2 (T2)",
-    datePublished: "October 15, 2026",
-    subjects: [
-      { subject: "General English", maxMarks: 100, marksObtained: 82, grade: "A2" },
-      { subject: "Mathematics", maxMarks: 100, marksObtained: 88, grade: "A2" },
-      { subject: "Science & Technology", maxMarks: 100, marksObtained: 84, grade: "A2" },
-      { subject: "Social Science", maxMarks: 100, marksObtained: 80, grade: "B1" },
-      { subject: "Urdu / Regional Language", maxMarks: 100, marksObtained: 86, grade: "A2" }
-    ],
-    totalMarks: 420,
-    maxMarks: 500,
-    percentage: 84.0,
-    overallGrade: "A2",
-    status: "PASS",
-    remarks: "Active participant in Smart Classroom ICT modules and composite science laboratory sessions.",
-    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge)"
-  },
-  {
-    id: "res-902",
-    rollNo: "902",
-    regNo: "JK-GHS-CHW-09-2026-02",
-    studentName: "Mehak Farooq",
-    parentName: "Farooq Ahmad Khan",
-    studentClass: "Class 9",
-    academicYear: "2025–26",
-    examTerm: "Term 2 (T2)",
-    datePublished: "October 15, 2026",
-    subjects: [
-      { subject: "General English", maxMarks: 100, marksObtained: 89, grade: "A2" },
-      { subject: "Mathematics", maxMarks: 100, marksObtained: 91, grade: "A1" },
-      { subject: "Science & Technology", maxMarks: 100, marksObtained: 90, grade: "A1" },
-      { subject: "Social Science", maxMarks: 100, marksObtained: 87, grade: "A2" },
-      { subject: "Urdu / Regional Language", maxMarks: 100, marksObtained: 88, grade: "A2" }
-    ],
-    totalMarks: 445,
-    maxMarks: 500,
-    percentage: 89.0,
-    overallGrade: "A1",
-    status: "PASS",
-    remarks: "Exemplary performance across STEM disciplines and regular attendance.",
-    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge)"
-  },
-  {
-    id: "res-801",
+    id: "topper-801",
     rollNo: "801",
-    regNo: "JK-GHS-CHW-08-2026-01",
-    studentName: "Aasif Gulzar",
-    parentName: "Gulzar Ahmad Bhat",
+    regNo: "JK-GHS-CHW-08-TOP-01",
+    studentName: "Saima Rashid",
+    meritPosition: "Class 8th Topper",
     studentClass: "Class 8",
     academicYear: "2025–26",
     examTerm: "Annual Examination",
-    datePublished: "October 10, 2026",
+    datePublished: "October 2026",
     subjects: [
-      { subject: "General English", maxMarks: 100, marksObtained: 79, grade: "B1" },
-      { subject: "Mathematics", maxMarks: 100, marksObtained: 85, grade: "A2" },
-      { subject: "General Science", maxMarks: 100, marksObtained: 82, grade: "A2" },
-      { subject: "Social Science", maxMarks: 100, marksObtained: 78, grade: "B1" },
-      { subject: "Urdu / Regional Language", maxMarks: 100, marksObtained: 80, grade: "B1" }
+      { subject: "General English", maxMarks: 100, marksObtained: 94, grade: "A1" },
+      { subject: "Mathematics", maxMarks: 100, marksObtained: 96, grade: "A1" },
+      { subject: "General Science", maxMarks: 100, marksObtained: 95, grade: "A1" },
+      { subject: "Social Science", maxMarks: 100, marksObtained: 92, grade: "A1" },
+      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 93, grade: "A1" }
     ],
-    totalMarks: 404,
+    totalMarks: 470,
     maxMarks: 500,
-    percentage: 80.8,
-    overallGrade: "A2",
+    percentage: 94.0,
+    overallGrade: "A1",
     status: "PROMOTED",
-    remarks: "Successfully promoted to Class 9. Recommended for advanced mathematics problem solving circles.",
-    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge)"
+    remarks: "Class 8th Topper — Outstanding academic distinction across Mathematics, Science, and Languages.",
+    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge) & Mr. Shareef Ahmad Khan (HOI)"
   },
   {
-    id: "res-701",
+    id: "topper-802",
+    rollNo: "802",
+    regNo: "JK-GHS-CHW-08-TOP-02",
+    studentName: "Danish Ahmad Khan",
+    meritPosition: "Class 8th Topper",
+    studentClass: "Class 8",
+    academicYear: "2025–26",
+    examTerm: "Annual Examination",
+    datePublished: "October 2026",
+    subjects: [
+      { subject: "General English", maxMarks: 100, marksObtained: 91, grade: "A1" },
+      { subject: "Mathematics", maxMarks: 100, marksObtained: 95, grade: "A1" },
+      { subject: "General Science", maxMarks: 100, marksObtained: 93, grade: "A1" },
+      { subject: "Social Science", maxMarks: 100, marksObtained: 90, grade: "A1" },
+      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 91, grade: "A1" }
+    ],
+    totalMarks: 460,
+    maxMarks: 500,
+    percentage: 92.0,
+    overallGrade: "A1",
+    status: "PROMOTED",
+    remarks: "Class 8th Topper — Exemplary conceptual problem-solving in Mathematics and Science Lab activities.",
+    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge) & Mr. Shareef Ahmad Khan (HOI)"
+  },
+  {
+    id: "topper-701",
     rollNo: "701",
-    regNo: "JK-GHS-CHW-07-2026-01",
-    studentName: "Muzamil Shafi",
-    parentName: "Mohd Shafi Wani",
+    regNo: "JK-GHS-CHW-07-TOP-01",
+    studentName: "Rutba",
+    meritPosition: "Class 7th Topper",
     studentClass: "Class 7",
     academicYear: "2025–26",
     examTerm: "Annual Examination",
-    datePublished: "October 10, 2026",
+    datePublished: "October 2026",
     subjects: [
-      { subject: "General English", maxMarks: 100, marksObtained: 83, grade: "A2" },
-      { subject: "Mathematics", maxMarks: 100, marksObtained: 80, grade: "B1" },
-      { subject: "General Science", maxMarks: 100, marksObtained: 85, grade: "A2" },
-      { subject: "Social Science", maxMarks: 100, marksObtained: 81, grade: "A2" },
-      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 84, grade: "A2" }
+      { subject: "General English", maxMarks: 100, marksObtained: 93, grade: "A1" },
+      { subject: "Mathematics", maxMarks: 100, marksObtained: 94, grade: "A1" },
+      { subject: "General Science", maxMarks: 100, marksObtained: 95, grade: "A1" },
+      { subject: "Social Science", maxMarks: 100, marksObtained: 91, grade: "A1" },
+      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 92, grade: "A1" }
     ],
-    totalMarks: 413,
+    totalMarks: 465,
     maxMarks: 500,
-    percentage: 82.6,
-    overallGrade: "A2",
+    percentage: 93.0,
+    overallGrade: "A1",
     status: "PROMOTED",
-    remarks: "Promoted to Class 8 with commendable grades in science and environment projects.",
+    remarks: "Class 7th Topper — Consistent merit holder with excellence in Science and creative writing.",
     inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge)"
   },
   {
-    id: "res-601",
+    id: "topper-702",
+    rollNo: "702",
+    regNo: "JK-GHS-CHW-07-TOP-02",
+    studentName: "Arbeena",
+    meritPosition: "Class 7th Topper",
+    studentClass: "Class 7",
+    academicYear: "2025–26",
+    examTerm: "Annual Examination",
+    datePublished: "October 2026",
+    subjects: [
+      { subject: "General English", maxMarks: 100, marksObtained: 92, grade: "A1" },
+      { subject: "Mathematics", maxMarks: 100, marksObtained: 91, grade: "A1" },
+      { subject: "General Science", maxMarks: 100, marksObtained: 92, grade: "A1" },
+      { subject: "Social Science", maxMarks: 100, marksObtained: 90, grade: "A1" },
+      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 93, grade: "A1" }
+    ],
+    totalMarks: 458,
+    maxMarks: 500,
+    percentage: 91.6,
+    overallGrade: "A1",
+    status: "PROMOTED",
+    remarks: "Class 7th Topper — Commendable all-round performance across languages, science, and classroom participation.",
+    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge)"
+  },
+  {
+    id: "topper-601",
     rollNo: "601",
-    regNo: "JK-GHS-CHW-06-2026-01",
-    studentName: "Zahid Manzoor",
-    parentName: "Manzoor Ahmad Shah",
+    regNo: "JK-GHS-CHW-06-TOP-01",
+    studentName: "Uzma",
+    meritPosition: "Class 6th Topper",
     studentClass: "Class 6",
     academicYear: "2025–26",
     examTerm: "Annual Examination",
-    datePublished: "October 10, 2026",
+    datePublished: "October 2026",
     subjects: [
-      { subject: "General English", maxMarks: 100, marksObtained: 86, grade: "A2" },
-      { subject: "Mathematics", maxMarks: 100, marksObtained: 89, grade: "A2" },
-      { subject: "General Science", maxMarks: 100, marksObtained: 87, grade: "A2" },
-      { subject: "Social Science", maxMarks: 100, marksObtained: 84, grade: "A2" },
-      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 88, grade: "A2" }
+      { subject: "General English", maxMarks: 100, marksObtained: 94, grade: "A1" },
+      { subject: "Mathematics", maxMarks: 100, marksObtained: 95, grade: "A1" },
+      { subject: "General Science", maxMarks: 100, marksObtained: 93, grade: "A1" },
+      { subject: "Social Science", maxMarks: 100, marksObtained: 91, grade: "A1" },
+      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 94, grade: "A1" }
     ],
-    totalMarks: 434,
+    totalMarks: 467,
     maxMarks: 500,
-    percentage: 86.8,
+    percentage: 93.4,
     overallGrade: "A1",
     status: "PROMOTED",
-    remarks: "First-year high school student excelling in foundational learning and library reading.",
+    remarks: "Class 6th Topper — First-rank achiever demonstrating strong foundational numeracy and reading fluency.",
+    inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge)"
+  },
+  {
+    id: "topper-602",
+    rollNo: "602",
+    regNo: "JK-GHS-CHW-06-TOP-02",
+    studentName: "Sana Jan",
+    meritPosition: "Class 6th Topper",
+    studentClass: "Class 6",
+    academicYear: "2025–26",
+    examTerm: "Annual Examination",
+    datePublished: "October 2026",
+    subjects: [
+      { subject: "General English", maxMarks: 100, marksObtained: 92, grade: "A1" },
+      { subject: "Mathematics", maxMarks: 100, marksObtained: 91, grade: "A1" },
+      { subject: "General Science", maxMarks: 100, marksObtained: 92, grade: "A1" },
+      { subject: "Social Science", maxMarks: 100, marksObtained: 90, grade: "A1" },
+      { subject: "Urdu / Kashmiri", maxMarks: 100, marksObtained: 93, grade: "A1" }
+    ],
+    totalMarks: 458,
+    maxMarks: 500,
+    percentage: 91.6,
+    overallGrade: "A1",
+    status: "PROMOTED",
+    remarks: "Class 6th Topper — Meritorious achievement across core NCERT/JKBOSE subjects and morning assembly activities.",
     inchargeTeacher: "Mr. Tahir Ahmad Kumar (Examination In-charge)"
   }
 ];
@@ -241,61 +217,154 @@ export const INITIAL_ADMISSIONS: AdmissionApplication[] = [
     id: "adm-101",
     applicationNo: "CHOWGAM-ADM-2026-1042",
     submissionDate: "October 22, 2026",
-    studentName: "Adil Hussain Malik",
+    studentName: "Sample Online Applicant (Demo Entry)",
     gender: "Male",
     dob: "2012-05-14",
-    aadhaarNo: "4829-1092-3847",
+    aadhaarNo: "XXXX-XXXX-3847",
     applyingForClass: "Class 9",
     academicSession: "2026–27",
-    fatherName: "Mohammad Hussain Malik",
-    motherName: "Rubeena Bano",
-    guardianPhone: "9858123456",
-    whatsappPhone: "9858123456",
+    fatherName: "Guardian Name",
+    motherName: "Mother Name",
+    guardianPhone: "7889635278",
+    whatsappPhone: "7889635278",
     category: "General",
     isCWSN: false,
     bloodGroup: "O+",
-    address: "Malik Mohalla, Village Chowgam",
+    address: "Village Chowgam, Zone Shangus",
     village: "Chowgam",
     zone: "Shangus",
     district: "Anantnag",
     pinCode: "192201",
-    previousSchool: "Govt Middle School Chowgam",
+    previousSchool: "Feeder Middle School Chowgam",
     previousClassPassed: "Class 8",
-    previousPercentage: "84.5%",
+    previousPercentage: "85.0%",
     documentsSubmitted: ["Date of Birth Certificate", "Previous Class Marks Card", "Aadhaar Card Copy", "Passport Photographs"],
     status: "Approved",
     verifiedBy: "Office Clerk Mr. Altaf Ahmad (Teacher)",
-    officeRemarks: "All originals verified. Free government admission confirmed under RTE norms."
+    officeRemarks: "Free government admission under RTE norms. Contact Office Clerk at 7889635278 for physical verification."
+  }
+];
+
+export interface GazetteStudentRecord {
+  rollNo: string;
+  studentName: string;
+  fatherName: string;
+  totalMarks: number;
+  maxMarks: number;
+  percentage: number;
+  grade: string;
+  result: 'PASS' | 'PROMOTED' | 'RE-APPEAR';
+}
+
+export interface PdfResultGazette {
+  id: string;
+  session: string;
+  studentClass: string;
+  title: string;
+  examName: string;
+  datePublished: string;
+  fileSize: string;
+  fileName: string;
+  totalStudents: number;
+  passedStudents: number;
+  passPercentage: string;
+  signedBy: string;
+  verifiedBy: string;
+  verificationCode: string;
+  description: string;
+  records: GazetteStudentRecord[];
+}
+
+export const INITIAL_PDF_GAZETTES: PdfResultGazette[] = [
+  {
+    id: "gaz-2024-25-10",
+    session: "Session 2024–25",
+    studentClass: "Class 10",
+    title: "Class 10th JKBOSE Annual Regular Board Gazette & Broad-Sheet",
+    examName: "JKBOSE Secondary School Examination (Class 10th) Annual Regular 2025",
+    datePublished: "May 24, 2025",
+    fileSize: "2.4 MB (Official Signed PDF Gazette)",
+    fileName: "GHS_Chowgam_Class10_AnnualRegular_Gazette_2024-25.pdf",
+    totalStudents: 32,
+    passedStudents: 31,
+    passPercentage: "96.87%",
+    signedBy: "Mr. Shareef Ahmad Khan (Headmaster / HOI)",
+    verifiedBy: "Mr. Tahir Ahmad Kumar (Examination In-charge, Phone: 8803497224)",
+    verificationCode: "JKBOSE-GHS-CHW-10-2025-PUB",
+    description: "Official broad-sheet summary certified for Class 10th board examinees of Govt High School Chowgam, Zone Shangus. Complete individual candidate registers are archived at the Examination Cell.",
+    records: []
   },
   {
-    id: "adm-102",
-    applicationNo: "CHOWGAM-ADM-2026-1043",
-    submissionDate: "October 24, 2026",
-    studentName: "Sana Tariq",
-    gender: "Female",
-    dob: "2014-08-20",
-    aadhaarNo: "7721-4901-2184",
-    applyingForClass: "Class 6",
-    academicSession: "2026–27",
-    fatherName: "Tariq Ahmad Rather",
-    motherName: "Shaheena Begum",
-    guardianPhone: "9797654321",
-    whatsappPhone: "9797654321",
-    category: "RBA",
-    isCWSN: false,
-    bloodGroup: "B+",
-    address: "Upper Chowgam, Near Spring",
-    village: "Chowgam",
-    zone: "Shangus",
-    district: "Anantnag",
-    pinCode: "192201",
-    previousSchool: "Govt Primary School Chowgam",
-    previousClassPassed: "Class 5",
-    previousPercentage: "88.0%",
-    documentsSubmitted: ["Date of Birth Certificate", "Previous Class Marks Card", "Aadhaar Card Copy", "RBA Certificate", "Passport Photographs"],
-    status: "Verified",
-    verifiedBy: "Office Clerk Mr. Altaf Ahmad (Teacher)",
-    officeRemarks: "RBA document verified. Provisionally enrolled for upcoming academic session."
+    id: "gaz-2024-25-9",
+    session: "Session 2024–25",
+    studentClass: "Class 9",
+    title: "Class 9th Annual Institutional Promotion Gazette & Summary",
+    examName: "Class 9th Annual Institutional Evaluation Session 2024–25",
+    datePublished: "March 28, 2025",
+    fileSize: "1.8 MB (Official Signed PDF Gazette)",
+    fileName: "GHS_Chowgam_Class9_Annual_Evaluation_2024-25.pdf",
+    totalStudents: 36,
+    passedStudents: 35,
+    passPercentage: "97.22%",
+    signedBy: "Mr. Shareef Ahmad Khan (Headmaster / HOI)",
+    verifiedBy: "Mr. Tahir Ahmad Kumar (Examination In-charge, Phone: 8803497224)",
+    verificationCode: "ZEO-SHG-GHS-CHW-09-2025-EVAL",
+    description: "Annual promotional gazette summary for Class 9th students transitioning to the Class 10th secondary academic wing.",
+    records: []
+  },
+  {
+    id: "gaz-2023-24-10",
+    session: "Session 2023–24",
+    studentClass: "Class 10",
+    title: "Class 10th JKBOSE Annual Regular Result Sheet Summary",
+    examName: "JKBOSE Secondary School Examination (Class 10th) Annual Regular 2024",
+    datePublished: "June 12, 2024",
+    fileSize: "2.1 MB (Official Signed PDF Gazette)",
+    fileName: "GHS_Chowgam_Class10_AnnualRegular_Gazette_2023-24.pdf",
+    totalStudents: 29,
+    passedStudents: 28,
+    passPercentage: "96.55%",
+    signedBy: "Mr. Shareef Ahmad Khan (Headmaster / HOI)",
+    verifiedBy: "Mr. Tahir Ahmad Kumar (Examination In-charge, Phone: 8803497224)",
+    verificationCode: "JKBOSE-GHS-CHW-10-2024-PUB",
+    description: "Official JKBOSE gazette summary for academic session 2023–24. Individual candidate records are preserved in the school office register.",
+    records: []
+  },
+  {
+    id: "gaz-2023-24-mid",
+    session: "Session 2023–24",
+    studentClass: "Classes 6th to 8th",
+    title: "Classes 6th to 8th Consolidated Middle Wing Annual Gazette",
+    examName: "Zone Shangus Uniform Middle Standard Evaluation Session 2023–24",
+    datePublished: "March 20, 2024",
+    fileSize: "3.1 MB (Official Signed PDF Gazette)",
+    fileName: "GHS_Chowgam_MiddleWing_Classes6_to_8_Gazette_2023-24.pdf",
+    totalStudents: 74,
+    passedStudents: 74,
+    passPercentage: "100.00%",
+    signedBy: "Mr. Shareef Ahmad Khan (Headmaster / HOI)",
+    verifiedBy: "Mr. Tahir Ahmad Kumar (Examination In-charge, Phone: 8803497224)",
+    verificationCode: "DIET-ANT-SHG-MID-2024",
+    description: "Combined Middle Standard annual gazette sheet for Classes 6th, 7th, and 8th under ZEO Shangus jurisdiction achieving 100% promotion.",
+    records: []
+  },
+  {
+    id: "gaz-2022-23-all",
+    session: "Session 2022–23",
+    studentClass: "All Classes (6th to 10th)",
+    title: "Session 2022–23 Archive School Gazette & Tabulation Summary",
+    examName: "School Annual General Evaluation & JKBOSE Class 10 Session 2022–23",
+    datePublished: "April 15, 2023",
+    fileSize: "4.2 MB (Official Signed PDF Gazette)",
+    fileName: "GHS_Chowgam_AllClasses_Archive_Gazette_2022-23.pdf",
+    totalStudents: 118,
+    passedStudents: 115,
+    passPercentage: "97.45%",
+    signedBy: "Mr. Shareef Ahmad Khan (Headmaster / HOI)",
+    verifiedBy: "Mr. Tahir Ahmad Kumar (Examination In-charge, Phone: 8803497224)",
+    verificationCode: "ZEO-SHG-GHS-CHW-ARCH-2023",
+    description: "Historical institutional archive containing aggregate statistics across all five classes (6th, 7th, 8th, 9th, and 10th) for Session 2022–23.",
+    records: []
   }
 ];
 

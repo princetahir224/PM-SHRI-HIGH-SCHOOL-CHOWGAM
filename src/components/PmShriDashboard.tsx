@@ -98,9 +98,13 @@ export const PmShriDashboard: React.FC<PmShriDashboardProps> = ({
               <span className="px-2.5 py-1 bg-emerald-100 text-emerald-950 rounded-md font-semibold border border-emerald-300">
                 Institutional Head: Headmaster Mr. Shareef Ahmad Khan
               </span>
-              <span className="px-2.5 py-1 bg-amber-100 text-amber-950 rounded-md font-semibold border border-amber-300">
-                ⭐ PM SHRI In-charge: Mr. Muzzaffer Ahmad Khan (Master)
-              </span>
+              <a
+                href="tel:9541011971"
+                className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 rounded-md font-semibold border border-amber-300 inline-flex items-center gap-1.5 transition-colors"
+                title="Call PM SHRI In-charge Mr. Muzzaffer Ahmad Khan"
+              >
+                <span>⭐ PM SHRI In-charge: Mr. Muzzaffer Ahmad Khan (Master) · 📞 9541011971</span>
+              </a>
               <span className="px-2.5 py-1 bg-stone-100 text-stone-700 rounded-md font-mono border border-stone-200">
                 Zone: Shangus
               </span>

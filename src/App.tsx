@@ -23,6 +23,9 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { AdminModal } from './components/AdminModal';
 import { SearchModal } from './components/SearchModal';
+import { ResultsCorner } from './components/ResultsCorner';
+import { OnlineAdmissionModal } from './components/OnlineAdmissionModal';
+import { AiTutorSection } from './components/AiTutorSection';
 
 import { 
   INITIAL_SCHOOL_INFO, 
@@ -37,8 +40,66 @@ import {
   QualityIndicator
 } from './data/schoolData';
 
+import {
+  INITIAL_RESULTS,
+  INITIAL_PDF_GAZETTES,
+  INITIAL_ADMISSIONS,
+  StudentResult,
+  PdfResultGazette,
+  AdmissionApplication
+} from './data/resultsAndAdmissionsData';
+
 export default function App() {
   // LocalStorage Persistence
+  const [results, setResults] = useState<StudentResult[]>(() => {
+    try {
+      const saved = localStorage.getItem('pmshri_results');
+      if (saved) {
+        const parsed: StudentResult[] = JSON.parse(saved);
+        const hasOldStudentNames = parsed.some(r =>
+          ['res-1001', 'res-1002', 'res-901', 'res-902', 'res-801', 'res-701', 'res-601'].includes(r.id)
+        );
+        const hasNewToppers = parsed.some(r => r.id === 'topper-801');
+        if (hasOldStudentNames || !hasNewToppers) {
+          localStorage.setItem('pmshri_results', JSON.stringify(INITIAL_RESULTS));
+          return INITIAL_RESULTS;
+        }
+        return parsed;
+      }
+      return INITIAL_RESULTS;
+    } catch {
+      return INITIAL_RESULTS;
+    }
+  });
+
+  const [pdfGazettes, setPdfGazettes] = useState<PdfResultGazette[]>(() => {
+    try {
+      const saved = localStorage.getItem('pmshri_gazettes');
+      if (saved) {
+        const parsed: PdfResultGazette[] = JSON.parse(saved);
+        const hasOldRecords = parsed.some(g => Array.isArray(g.records) && g.records.length > 0);
+        if (hasOldRecords) {
+          localStorage.setItem('pmshri_gazettes', JSON.stringify(INITIAL_PDF_GAZETTES));
+          return INITIAL_PDF_GAZETTES;
+        }
+        return parsed;
+      }
+      return INITIAL_PDF_GAZETTES;
+    } catch {
+      return INITIAL_PDF_GAZETTES;
+    }
+  });
+
+  const [applications, setApplications] = useState<AdmissionApplication[]>(() => {
+    try {
+      const saved = localStorage.getItem('pmshri_admissions');
+      return saved ? JSON.parse(saved) : INITIAL_ADMISSIONS;
+    } catch {
+      return INITIAL_ADMISSIONS;
+    }
+  });
+
+  const [isAdmissionModalOpen, setIsAdmissionModalOpen] = useState(false);
   const [staffList, setStaffList] = useState<StaffMember[]>(() => {
     try {
       const saved = localStorage.getItem('pmshri_staff');
@@ -146,6 +207,30 @@ export default function App() {
     localStorage.setItem('pmshri_indicators', JSON.stringify(indicators));
   }, [indicators]);
 
+  useEffect(() => {
+    localStorage.setItem('pmshri_results', JSON.stringify(results));
+  }, [results]);
+
+  useEffect(() => {
+    localStorage.setItem('pmshri_gazettes', JSON.stringify(pdfGazettes));
+  }, [pdfGazettes]);
+
+  useEffect(() => {
+    localStorage.setItem('pmshri_admissions', JSON.stringify(applications));
+  }, [applications]);
+
+  const handleAddResult = (newResult: StudentResult) => {
+    setResults(prev => [newResult, ...prev]);
+  };
+
+  const handleAddGazette = (newGazette: PdfResultGazette) => {
+    setPdfGazettes(prev => [newGazette, ...prev]);
+  };
+
+  const handleAddApplication = (newApp: AdmissionApplication) => {
+    setApplications(prev => [newApp, ...prev]);
+  };
+
   const handleUpdateHoi = (message: string, name: string) => {
     setHoiMessage(message);
     setHoiName(name);
@@ -159,6 +244,9 @@ export default function App() {
       setFacilities(INITIAL_FACILITIES);
       setNotices(INITIAL_NOTICES);
       setIndicators(INITIAL_QUALITY_INDICATORS);
+      setResults(INITIAL_RESULTS);
+      setPdfGazettes(INITIAL_PDF_GAZETTES);
+      setApplications(INITIAL_ADMISSIONS);
       setHoiMessage(INITIAL_SCHOOL_INFO.hoi.message);
       setHoiName(INITIAL_SCHOOL_INFO.hoi.name);
       localStorage.clear();
@@ -198,6 +286,7 @@ export default function App() {
         isHighContrast={isHighContrast}
         fontSize={fontSize}
         onChangeFontSize={setFontSize}
+        onOpenAdmission={() => setIsAdmissionModalOpen(true)}
       />
 
       {/* Main Content Sections */}
@@ -207,6 +296,7 @@ export default function App() {
           onNavigate={handleNavigate}
           notices={notices}
           onSelectNotice={(notice) => setSelectedNotice(notice)}
+          onOpenAdmission={() => setIsAdmissionModalOpen(true)}
         />
 
         {/* 2. About Our School & "In the Lap of Nature" */}
@@ -229,6 +319,17 @@ export default function App() {
 
         {/* 4b. JKBOSE Live Notice Board & Desk of Kashmir */}
         <JkboseNoticeBoard />
+
+        {/* 4c. School Results Corner & Class Toppers Portal (Classes 6 to 10 + Past Sessions Gazette) */}
+        <ResultsCorner
+          results={results}
+          pdfGazettes={pdfGazettes}
+          onAddResult={handleAddResult}
+          onAddGazette={handleAddGazette}
+        />
+
+        {/* 4d. AI Study Tutor & Interactive Practice Questionnaire */}
+        <AiTutorSection />
 
         {/* 5. Smart Classroom, ICT Lab & School Library */}
         <DigitalAndLibrarySection />
@@ -265,7 +366,9 @@ export default function App() {
         />
 
         {/* 11. Students & Parents Information Portal */}
-        <StudentParentPortal />
+        <StudentParentPortal
+          onOpenAdmission={() => setIsAdmissionModalOpen(true)}
+        />
 
         {/* 12. Green Chowgam Campus & Sustainability */}
         <GreenCampusSection />
@@ -281,6 +384,14 @@ export default function App() {
       <Footer
         onNavigate={handleNavigate}
         onOpenAdmin={() => setAdminOpen(true)}
+      />
+
+      {/* Online Admission Portal Modal */}
+      <OnlineAdmissionModal
+        isOpen={isAdmissionModalOpen}
+        onClose={() => setIsAdmissionModalOpen(false)}
+        applications={applications}
+        onAddApplication={handleAddApplication}
       />
 
       {/* Staff Administrative Console Modal */}

@@ -8,10 +8,18 @@ import {
   CheckCircle2, 
   FileCheck, 
   Sparkles,
-  HelpCircle
+  HelpCircle,
+  Phone,
+  Mail
 } from 'lucide-react';
 
-export const StudentParentPortal: React.FC = () => {
+interface StudentParentPortalProps {
+  onOpenAdmission?: () => void;
+}
+
+export const StudentParentPortal: React.FC<StudentParentPortalProps> = ({
+  onOpenAdmission
+}) => {
   const [activeTab, setActiveTab] = useState<'admissions' | 'calendar' | 'timetable' | 'feedback'>('admissions');
   const [feedbackSent, setFeedbackSent] = useState(false);
   const [parentName, setParentName] = useState('');
@@ -162,9 +170,38 @@ export const StudentParentPortal: React.FC = () => {
                 </li>
               </ul>
 
-              <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500 flex flex-wrap items-center justify-between gap-2">
-                <span>School Office Hours: Monday to Saturday, 10:00 AM – 4:00 PM</span>
-                <span className="font-semibold text-emerald-900">Office Clerk: Mr. Altaf Ahmad (Master) · Zone: Shangus</span>
+              <div className="mt-6 pt-4 border-t border-stone-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs">
+                <div>
+                  <div className="text-stone-500">School Office Hours: Monday to Saturday, 10:00 AM – 4:00 PM</div>
+                  <div className="font-semibold text-emerald-900 mt-0.5">
+                    Office Clerk / In-charge: Mr. Altaf Ahmad (Teacher) · Official Gmail: <strong className="text-stone-900">hschowgam@gmail.com</strong>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href="mailto:hschowgam@gmail.com?subject=Admission%20Application%20Inquiry%20-%20PM%20SHRI%20GHS%20Chowgam"
+                    className="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-300 rounded-lg font-semibold transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-emerald-800" />
+                    <span>hschowgam@gmail.com</span>
+                  </a>
+                  <a
+                    href="tel:7889635278"
+                    className="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-lg font-bold transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-emerald-700" />
+                    <span>7889635278</span>
+                  </a>
+                  {onOpenAdmission && (
+                    <button
+                      onClick={onOpenAdmission}
+                      className="px-3.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-amber-950 font-bold rounded-lg transition-colors shadow-xs"
+                    >
+                      Apply Online Now
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

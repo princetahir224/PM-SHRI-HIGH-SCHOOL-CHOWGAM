@@ -153,6 +153,105 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
+            {/* Designated In-Charge Direct Phone Directory */}
+            <div className="bg-emerald-950 text-white p-6 rounded-xl border border-emerald-900 shadow-sm">
+              <div className="flex items-center justify-between gap-3 mb-4 border-b border-emerald-800 pb-3">
+                <div>
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-amber-300 font-semibold">
+                    Direct Contact Directory · Zone Shangus
+                  </div>
+                  <h4 className="text-base font-bold text-white mt-0.5">
+                    Official In-Charge & Administrative Desks
+                  </h4>
+                </div>
+                <span className="text-[11px] font-mono bg-emerald-900 px-2 py-0.5 rounded text-emerald-200">
+                  Direct Lines
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                {/* Office Clerk */}
+                <div className="p-3 bg-emerald-900/60 rounded-lg border border-emerald-800 flex flex-col justify-between">
+                  <div>
+                    <div className="text-amber-300 font-bold text-[11px] uppercase tracking-wide">
+                      Office Clerk / In-charge
+                    </div>
+                    <div className="text-white font-bold text-sm mt-0.5">Mr. Altaf Ahmad (Mohd Altaf)</div>
+                    <div className="text-emerald-200 text-[11px]">Teacher · Admissions & School Records</div>
+                  </div>
+                  <div className="mt-2.5 pt-2 border-t border-emerald-800/80">
+                    <a
+                      href="tel:7889635278"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-800 hover:bg-emerald-700 text-amber-300 hover:text-white rounded font-bold text-xs transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5 text-amber-400" />
+                      <span>7889635278</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Examination In-charge */}
+                <div className="p-3 bg-emerald-900/60 rounded-lg border border-emerald-800 flex flex-col justify-between">
+                  <div>
+                    <div className="text-sky-300 font-bold text-[11px] uppercase tracking-wide">
+                      Examination In-charge
+                    </div>
+                    <div className="text-white font-bold text-sm mt-0.5">Mr. Tahir Ahmad Kumar</div>
+                    <div className="text-emerald-200 text-[11px]">Teacher · Results, JKBOSE & ICT Lab</div>
+                  </div>
+                  <div className="mt-2.5 pt-2 border-t border-emerald-800/80">
+                    <a
+                      href="tel:8803497224"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-800 hover:bg-emerald-700 text-sky-200 hover:text-white rounded font-bold text-xs transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5 text-sky-300" />
+                      <span>8803497224</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* PM SHRI In-charge */}
+                <div className="p-3 bg-emerald-900/60 rounded-lg border border-emerald-800 flex flex-col justify-between">
+                  <div>
+                    <div className="text-amber-300 font-bold text-[11px] uppercase tracking-wide">
+                      PM SHRI In-charge
+                    </div>
+                    <div className="text-white font-bold text-sm mt-0.5">Mr. Muzzaffer Ahmad Khan</div>
+                    <div className="text-emerald-200 text-[11px]">Master · 16 PM SHRI Domains & NEP 2020</div>
+                  </div>
+                  <div className="mt-2.5 pt-2 border-t border-emerald-800/80">
+                    <a
+                      href="tel:9541011971"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-800 hover:bg-emerald-700 text-amber-300 hover:text-white rounded font-bold text-xs transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5 text-amber-400" />
+                      <span>9541011971</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Head of Institution */}
+                <div className="p-3 bg-emerald-900/60 rounded-lg border border-emerald-800 flex flex-col justify-between">
+                  <div>
+                    <div className="text-stone-300 font-bold text-[11px] uppercase tracking-wide">
+                      Headmaster / HOI
+                    </div>
+                    <div className="text-white font-bold text-sm mt-0.5">Mr. Shareef Ahmad Khan</div>
+                    <div className="text-emerald-200 text-[11px]">Administration & Community Relations</div>
+                  </div>
+                  <div className="mt-2.5 pt-2 border-t border-emerald-800/80">
+                    <a
+                      href="tel:7889725799"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-800 hover:bg-emerald-700 text-amber-300 hover:text-white rounded font-bold text-xs transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5 text-amber-400" />
+                      <span>7889725799</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Visual Mountain Valley Map Locator */}
             <div className="bg-white rounded-xl border border-stone-200 p-6 shadow-xs">
               <h4 className="font-bold text-stone-900 text-sm mb-3 flex items-center justify-between">

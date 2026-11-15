@@ -18,12 +18,14 @@ interface HeroSectionProps {
   onNavigate: (sectionId: string) => void;
   notices: NoticeItem[];
   onSelectNotice: (notice: NoticeItem) => void;
+  onOpenAdmission?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onNavigate,
   notices,
-  onSelectNotice
+  onSelectNotice,
+  onOpenAdmission
 }) => {
   const latestNotice = notices[0];
   const [activePhoto, setActivePhoto] = React.useState<'campus' | 'assembly'>('campus');
@@ -105,21 +107,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             Empowering young minds through quality education, digital innovation, inclusive learning, environmental responsibility, and holistic development in the beautiful surroundings of Chowgam.
           </p>
 
-          {/* 5 Prominent Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 max-w-3xl mx-auto mb-10">
+          {/* Prominent Action Buttons including Admission & Results Corner */}
+          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto mb-8">
+            {onOpenAdmission && (
+              <button
+                onClick={onOpenAdmission}
+                className="px-5 py-2.5 text-xs sm:text-sm font-bold text-amber-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors shadow-md flex items-center gap-2 whitespace-nowrap"
+              >
+                <span>Apply for Admission (2026–27)</span>
+              </button>
+            )}
+
             <button
-              onClick={() => onNavigate('about')}
-              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-emerald-800 hover:bg-emerald-700 rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
+              onClick={() => onNavigate('results')}
+              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-emerald-700 hover:bg-emerald-600 rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
             >
-              <Compass className="w-4 h-4 text-emerald-300" />
-              <span>Explore Our School</span>
+              <span>Class Toppers & Results</span>
             </button>
 
             <button
-              onClick={() => onNavigate('contact')}
-              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-stone-900 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
+              onClick={() => onNavigate('ai-tutor')}
+              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-emerald-950 bg-emerald-100 hover:bg-white rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
             >
-              <span>Admissions & Enquiries</span>
+              <BookOpen className="w-4 h-4 text-emerald-800" />
+              <span>AI Study Tutor & Quiz</span>
+            </button>
+
+            <button
+              onClick={() => onNavigate('about')}
+              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-stone-100 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-xs rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
+            >
+              <Compass className="w-4 h-4 text-emerald-300" />
+              <span>Explore Our School</span>
             </button>
 
             <button
@@ -127,15 +146,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-stone-100 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-xs rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
             >
               <BookOpen className="w-4 h-4 text-amber-300" />
-              <span>Academic Excellence</span>
-            </button>
-
-            <button
-              onClick={() => onNavigate('facilities')}
-              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-stone-100 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-xs rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
-            >
-              <Building className="w-4 h-4 text-emerald-300" />
-              <span>Explore School Facilities</span>
+              <span>Academic Curriculum</span>
             </button>
 
             <button
@@ -143,8 +154,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-stone-100 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-xs rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
             >
               <Users className="w-4 h-4 text-amber-300" />
-              <span>Contact Head of Institution</span>
+              <span>Staff & In-Charges</span>
             </button>
+          </div>
+
+          {/* Quick Dial Key Contacts Strip */}
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs pt-4 border-t border-white/15">
+            <span className="text-stone-300 text-[11px] font-mono">Quick In-Charge Contacts:</span>
+            <a
+              href="tel:7889635278"
+              className="px-2.5 py-1 bg-emerald-900/80 hover:bg-emerald-800 text-amber-200 rounded font-semibold transition-colors flex items-center gap-1 border border-emerald-700/60"
+            >
+              <span>Office Clerk: 7889635278</span>
+            </a>
+            <a
+              href="tel:8803497224"
+              className="px-2.5 py-1 bg-sky-950/80 hover:bg-sky-900 text-sky-200 rounded font-semibold transition-colors flex items-center gap-1 border border-sky-700/60"
+            >
+              <span>Exam In-charge: 8803497224</span>
+            </a>
+            <a
+              href="tel:9541011971"
+              className="px-2.5 py-1 bg-amber-950/80 hover:bg-amber-900 text-amber-200 rounded font-semibold transition-colors flex items-center gap-1 border border-amber-700/60"
+            >
+              <span>PM SHRI: 9541011971</span>
+            </a>
           </div>
 
           {/* Tagline Ribbon */}

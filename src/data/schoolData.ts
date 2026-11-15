@@ -43,6 +43,7 @@ export interface StaffMember {
   responsibilities: string;
   isHOI?: boolean;
   status: 'Verified Role' | 'Verified Staff' | 'Active Cadre' | 'Profile Configurable';
+  phone?: string;
 }
 
 export interface NoticeItem {
@@ -619,7 +620,8 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
     qualifications: "M.A., B.Ed.",
     responsibilities: "Overall institutional administration, academic supervision, PM SHRI implementation, staff coordination, and community relations.",
     isHOI: true,
-    status: "Verified Role"
+    status: "Verified Role",
+    phone: "7889725799"
   },
   {
     id: "staff-2",
@@ -685,7 +687,8 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
     name: "Mr. Muzzaffer Ahmad Khan",
     qualifications: "M.A., B.Ed [Official Department Cadre]",
     responsibilities: "PM SHRI In-charge overseeing the 16 development domains, Green School interventions, smart classroom integration, benchmark self-audits, continuous comprehensive evaluation (CCE), and secondary academic guidance.",
-    status: "Verified Staff"
+    status: "Verified Staff",
+    phone: "9541011971"
   },
   {
     id: "staff-8",
@@ -696,7 +699,8 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
     name: "Mr. Altaf Ahmad (Mohd Altaf)",
     qualifications: "B.Sc, B.Ed [Official Department Cadre]",
     responsibilities: "Teacher & Office Clerk / In-charge handling official institutional correspondence with ZEO Shangus and CEO Anantnag, admissions registers, student records, salary and service books, and secondary mathematics instruction.",
-    status: "Verified Staff"
+    status: "Verified Staff",
+    phone: "7889635278"
   },
   {
     id: "staff-9",
@@ -740,7 +744,8 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
     name: "Mr. Tahir Ahmad Kumar",
     qualifications: "M.Sc. Math, B.Ed.",
     responsibilities: "Mathematics Teacher; ICT In-charge managing Smart Classrooms and computer laboratory; Examination In-charge directing JKBOSE board registrations, internal assessments, and student progress evaluation.",
-    status: "Verified Staff"
+    status: "Verified Staff",
+    phone: "8803497224"
   },
   {
     id: "staff-13",

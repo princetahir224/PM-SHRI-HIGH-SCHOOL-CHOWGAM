@@ -31,8 +31,8 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
   const faculty = staffList.filter(s => !s.isHOI);
 
   const filteredFaculty = faculty.filter(member => {
-    if (selectedCategory === 'masters') return member.slotNumber >= 2 && member.slotNumber <= 8;
-    if (selectedCategory === 'teachers') return member.slotNumber >= 9 && member.slotNumber <= 12;
+    if (selectedCategory === 'masters') return member.slotNumber >= 2 && member.slotNumber <= 7;
+    if (selectedCategory === 'teachers') return member.slotNumber >= 8 && member.slotNumber <= 12;
     if (selectedCategory === 'support') return member.slotNumber === 13;
     return true;
   });
@@ -214,64 +214,123 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
             {/* HOI */}
-            <div className="p-3.5 bg-stone-800/80 rounded-xl border border-stone-700/70">
-              <div className="text-amber-400 font-bold uppercase tracking-wider text-[11px]">Head of Institution (HOI)</div>
-              <div className="text-base font-bold text-white mt-0.5">Mr. Shareef Ahmad Khan</div>
-              <div className="text-stone-400 text-[11px] mt-0.5">Headmaster · Overall Institutional Administration & SMC</div>
+            <div className="p-3.5 bg-stone-800/80 rounded-xl border border-stone-700/70 flex flex-col justify-between">
+              <div>
+                <div className="text-amber-400 font-bold uppercase tracking-wider text-[11px]">Head of Institution (HOI)</div>
+                <div className="text-base font-bold text-white mt-0.5">Mr. Shareef Ahmad Khan</div>
+                <div className="text-stone-400 text-[11px] mt-0.5">Headmaster · Overall Institutional Administration & SMC</div>
+              </div>
+              <div className="mt-2.5 pt-2 border-t border-stone-700/50">
+                <a
+                  href="tel:7889725799"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-stone-700 hover:bg-stone-600 text-amber-300 rounded font-semibold text-[11px] transition-colors"
+                >
+                  <Phone className="w-3 h-3 text-amber-400" />
+                  <span>Call: 7889725799</span>
+                </a>
+              </div>
             </div>
 
             {/* PM SHRI In-charge */}
-            <div className="p-3.5 bg-amber-950/40 rounded-xl border border-amber-800/60">
-              <div className="text-amber-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
-                <span>⭐ PM SHRI In-charge</span>
+            <div className="p-3.5 bg-amber-950/40 rounded-xl border border-amber-800/60 flex flex-col justify-between">
+              <div>
+                <div className="text-amber-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <span>⭐ PM SHRI In-charge</span>
+                </div>
+                <div className="text-base font-bold text-amber-100 mt-0.5">Mr. Muzzaffer Ahmad Khan</div>
+                <div className="text-stone-300 text-[11px] mt-0.5">Master · 16 Development Domains, NEP 2020 & Green School</div>
               </div>
-              <div className="text-base font-bold text-amber-100 mt-0.5">Mr. Muzzaffer Ahmad Khan</div>
-              <div className="text-stone-300 text-[11px] mt-0.5">Master · 16 Development Domains, NEP 2020 & Green School</div>
+              <div className="mt-2.5 pt-2 border-t border-amber-800/40">
+                <a
+                  href="tel:9541011971"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-amber-900/70 hover:bg-amber-800 text-amber-200 rounded font-semibold text-[11px] transition-colors"
+                >
+                  <Phone className="w-3 h-3 text-amber-300" />
+                  <span>Call: 9541011971</span>
+                </a>
+              </div>
             </div>
 
             {/* Samagra Shiksha In-charge */}
-            <div className="p-3.5 bg-indigo-950/40 rounded-xl border border-indigo-800/60">
-              <div className="text-indigo-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
-                <span>📚 Samagra Shiksha In-charge</span>
+            <div className="p-3.5 bg-indigo-950/40 rounded-xl border border-indigo-800/60 flex flex-col justify-between">
+              <div>
+                <div className="text-indigo-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <span>📚 Samagra Shiksha In-charge</span>
+                </div>
+                <div className="text-base font-bold text-indigo-100 mt-0.5">Mr. Gh Mohd Rafique</div>
+                <div className="text-stone-300 text-[11px] mt-0.5">Master · Flagship Schemes, Grants, Free Textbooks & Uniforms</div>
               </div>
-              <div className="text-base font-bold text-indigo-100 mt-0.5">Mr. Gh Mohd Rafique</div>
-              <div className="text-stone-300 text-[11px] mt-0.5">Master · Flagship Schemes, Grants, Free Textbooks & Uniforms</div>
+              <div className="mt-2.5 pt-2 border-t border-indigo-800/40 text-[11px] text-indigo-200/80">
+                <span>Official Samagra Desk · Zone Shangus</span>
+              </div>
             </div>
 
             {/* Office Clerk */}
-            <div className="p-3.5 bg-emerald-950/40 rounded-xl border border-emerald-800/60">
-              <div className="text-emerald-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
-                <span>📑 Office Clerk / In-charge</span>
+            <div className="p-3.5 bg-emerald-950/40 rounded-xl border border-emerald-800/60 flex flex-col justify-between">
+              <div>
+                <div className="text-emerald-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <span>📑 Office Clerk / In-charge</span>
+                </div>
+                <div className="text-base font-bold text-emerald-100 mt-0.5">Mr. Altaf Ahmad (Mohd Altaf)</div>
+                <div className="text-stone-300 text-[11px] mt-0.5">Teacher · Institutional Admissions, Service Books & ZEO Shangus Desk</div>
               </div>
-              <div className="text-base font-bold text-emerald-100 mt-0.5">Mr. Altaf Ahmad (Mohd Altaf)</div>
-              <div className="text-stone-300 text-[11px] mt-0.5">Master · Institutional Admissions, Service Books & ZEO Shangus Desk</div>
-            </div>
-
-            {/* Sports In-charge */}
-            <div className="p-3.5 bg-orange-950/40 rounded-xl border border-orange-800/60">
-              <div className="text-orange-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
-                <span>🏆 Sports In-charge</span>
+              <div className="mt-2.5 pt-2 border-t border-emerald-800/40">
+                <a
+                  href="tel:7889635278"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-900/70 hover:bg-emerald-800 text-emerald-200 rounded font-semibold text-[11px] transition-colors"
+                >
+                  <Phone className="w-3 h-3 text-emerald-300" />
+                  <span>Call: 7889635278</span>
+                </a>
               </div>
-              <div className="text-base font-bold text-orange-100 mt-0.5">Mr. Mohd Anzar Khan (Anzar Ahmad)</div>
-              <div className="text-stone-300 text-[11px] mt-0.5">Teacher · Inter-School Athletic Meets, Volleyball, Cricket & PT</div>
             </div>
 
             {/* ICT & Exam In-charge */}
-            <div className="p-3.5 bg-sky-950/40 rounded-xl border border-sky-800/60">
-              <div className="text-sky-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
-                <span>💻 ICT & Exam In-charge</span>
+            <div className="p-3.5 bg-sky-950/40 rounded-xl border border-sky-800/60 flex flex-col justify-between">
+              <div>
+                <div className="text-sky-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <span>💻 ICT & Exam In-charge</span>
+                </div>
+                <div className="text-base font-bold text-sky-100 mt-0.5">Mr. Tahir Ahmad Kumar</div>
+                <div className="text-stone-300 text-[11px] mt-0.5">Teacher · Math Teacher (M.Sc. Math), Computer Lab & JKBOSE Cell</div>
               </div>
-              <div className="text-base font-bold text-sky-100 mt-0.5">Mr. Tahir Ahmad Kumar</div>
-              <div className="text-stone-300 text-[11px] mt-0.5">Teacher · Math Teacher (M.Sc. Math), Computer Lab & JKBOSE Cell</div>
+              <div className="mt-2.5 pt-2 border-t border-sky-800/40">
+                <a
+                  href="tel:8803497224"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-sky-900/70 hover:bg-sky-800 text-sky-200 rounded font-semibold text-[11px] transition-colors"
+                >
+                  <Phone className="w-3 h-3 text-sky-300" />
+                  <span>Call: 8803497224</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Sports In-charge */}
+            <div className="p-3.5 bg-orange-950/40 rounded-xl border border-orange-800/60 flex flex-col justify-between">
+              <div>
+                <div className="text-orange-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <span>🏆 Sports In-charge</span>
+                </div>
+                <div className="text-base font-bold text-orange-100 mt-0.5">Mr. Mohd Anzar Khan (Anzar Ahmad)</div>
+                <div className="text-stone-300 text-[11px] mt-0.5">Teacher · Inter-School Athletic Meets, Volleyball, Cricket & PT</div>
+              </div>
+              <div className="mt-2.5 pt-2 border-t border-orange-800/40 text-[11px] text-orange-200/80">
+                <span>Sports & Physical Fitness Wing</span>
+              </div>
             </div>
 
             {/* Science Lab In-charge */}
-            <div className="p-3.5 bg-teal-950/40 rounded-xl border border-teal-800/60">
-              <div className="text-teal-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
-                <span>🔬 Science Lab In-charge</span>
+            <div className="p-3.5 bg-teal-950/40 rounded-xl border border-teal-800/60 flex flex-col justify-between">
+              <div>
+                <div className="text-teal-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <span>🔬 Science Lab In-charge</span>
+                </div>
+                <div className="text-base font-bold text-teal-100 mt-0.5">Mr. Ajaz Ahmad Wani</div>
+                <div className="text-stone-300 text-[11px] mt-0.5">Science Teacher · Composite Science Lab, Practical Sessions & STEM Experiments</div>
               </div>
-              <div className="text-base font-bold text-teal-100 mt-0.5">Mr. Ajaz Ahmad Wani</div>
-              <div className="text-stone-300 text-[11px] mt-0.5">Science Teacher · Composite Science Lab, Practical Sessions & STEM Experiments</div>
+              <div className="mt-2.5 pt-2 border-t border-teal-800/40 text-[11px] text-teal-200/80">
+                <span>Science Practical & Innovation Lab</span>
+              </div>
             </div>
           </div>
         </div>
@@ -284,15 +343,15 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                 Official Faculty & Staff Cadre (12 Members)
               </h3>
               <p className="text-xs text-stone-500 mt-0.5">
-                Zone: Shangus · Headmaster Mr. Shareef Ahmad Khan (S.No 1) · Masters Cadre (S.No 2 to 8) · Teachers Cadre (S.No 9 to 12) · Institutional Support (S.No 13)
+                Zone: Shangus · Headmaster Mr. Shareef Ahmad Khan (S.No 1) · Masters Cadre (S.No 2 to 7) · Teachers Cadre (S.No 8 to 12) · Institutional Support (S.No 13)
               </p>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-amber-900 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-medium">
-                7 Masters
+                6 Masters
               </span>
               <span className="text-xs text-sky-900 bg-sky-50 px-2.5 py-1 rounded-md border border-sky-200 font-medium">
-                4 Teachers
+                5 Teachers
               </span>
               <span className="text-xs text-stone-700 bg-stone-100 px-2.5 py-1 rounded-md border border-stone-200 font-medium">
                 1 Support
@@ -320,7 +379,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                   : 'bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100'
               }`}
             >
-              Masters (S.No 2 to 8)
+              Masters (S.No 2 to 7)
             </button>
             <button
               onClick={() => setSelectedCategory('teachers')}
@@ -330,7 +389,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                   : 'bg-sky-50 text-sky-800 border border-sky-200 hover:bg-sky-100'
               }`}
             >
-              Teachers (S.No 9 to 12)
+              Teachers (S.No 8 to 12)
             </button>
             <button
               onClick={() => setSelectedCategory('support')}
@@ -346,8 +405,8 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredFaculty.map((member) => {
-              const isMaster = member.slotNumber >= 2 && member.slotNumber <= 8;
-              const isTeacher = member.slotNumber >= 9 && member.slotNumber <= 12;
+              const isMaster = member.slotNumber >= 2 && member.slotNumber <= 7;
+              const isTeacher = member.slotNumber >= 8 && member.slotNumber <= 12;
               const isSlot3Rafique = member.slotNumber === 3;
               const isSlot7Muzzaffer = member.slotNumber === 7;
               const isSlot8Altaf = member.slotNumber === 8;
@@ -542,6 +601,18 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                       </div>
                     )}
 
+                    {member.phone && (
+                      <div className="mt-2 mb-2.5">
+                        <a
+                          href={`tel:${member.phone}`}
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 rounded-md text-xs font-semibold transition-colors"
+                        >
+                          <Phone className="w-3 h-3 text-emerald-700" />
+                          <span>Call: {member.phone}</span>
+                        </a>
+                      </div>
+                    )}
+
                     <div className="text-xs text-stone-600 mb-2">
                       <span className="text-stone-400">Qual: </span>
                       <span className="font-mono text-stone-900 font-semibold">{member.qualifications}</span>
@@ -569,7 +640,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
           </div>
 
           <div className="mt-8 p-4 bg-stone-100 rounded-lg text-xs text-stone-600 text-center leading-relaxed">
-            <strong>Institutional Cadre Summary (Zone Shangus):</strong> PM SHRI Govt High School Chowgam is led by Headmaster Mr. Shareef Ahmad Khan (S.No 1), supported by Masters (S.No 2 to 8: Mr. Ab Raheem Shairgojri, Mr. Gh Mohd Rafique [Samagra In-charge], Mr. Nazir Ahmad Khan, Mr. Gulzar Ahmad Khan, Mr. Ab Rashid Wani, Mr. Muzzaffer Ahmad Khan [PM SHRI In-charge], Mr. Altaf Ahmad [Office Clerk]), Teachers (S.No 9 to 12: Mr. Ajaz Ahmad Wani [Science Lab In-charge], Mr. Mohd Anzar Khan [Sports In-charge], Mr. Muzzafer Rasool Malik [Science Teacher], Mr. Tahir Ahmad Kumar [ICT & Exam In-charge, Math Teacher, M.Sc. Math]), and Office Desk (S.No 13).
+            <strong>Institutional Cadre Summary (Zone Shangus):</strong> PM SHRI Govt High School Chowgam is led by Headmaster Mr. Shareef Ahmad Khan (S.No 1, Phone: 7889725799), supported by Masters (S.No 2 to 7: Mr. Ab Raheem Shairgojri, Mr. Gh Mohd Rafique [Samagra In-charge], Mr. Nazir Ahmad Khan, Mr. Gulzar Ahmad Khan, Mr. Ab Rashid Wani, Mr. Muzzaffer Ahmad Khan [PM SHRI In-charge, Phone: 9541011971]), Teachers (S.No 8 to 12: Mr. Altaf Ahmad [Teacher & Office Clerk / In-charge, Phone: 7889635278], Mr. Ajaz Ahmad Wani [Science Teacher & Science Lab In-charge], Mr. Mohd Anzar Khan [Sports In-charge], Mr. Muzzafer Rasool Malik [Science Teacher], Mr. Tahir Ahmad Kumar [ICT & Examination In-charge, Math Teacher, Phone: 8803497224]), and Office Desk (S.No 13).
           </div>
         </div>
 

@@ -20,6 +20,7 @@ interface HeaderProps {
   isHighContrast: boolean;
   fontSize: 'sm' | 'md' | 'lg';
   onChangeFontSize: (size: 'sm' | 'md' | 'lg') => void;
+  onOpenAdmission?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -31,20 +32,20 @@ export const Header: React.FC<HeaderProps> = ({
   isHighContrast,
   fontSize,
   onChangeFontSize,
+  onOpenAdmission
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [academicsDropdown, setAcademicsDropdown] = useState(false);
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About School' },
-    { id: 'facilities', label: 'Infrastructure' },
+    { id: 'about', label: 'About' },
     { id: 'academics', label: 'Academics' },
-    { id: 'jkbose-board', label: 'JKBOSE Board' },
-    { id: 'beyond', label: 'Holistic Growth' },
-    { id: 'pmshri', label: 'PM SHRI Dashboard' },
-    { id: 'staff', label: 'Faculty & Staff' },
-    { id: 'notices', label: 'Notices & Circulars' },
+    { id: 'results', label: 'Results' },
+    { id: 'ai-tutor', label: 'AI Tutor' },
+    { id: 'jkbose-board', label: 'JKBOSE' },
+    { id: 'pmshri', label: 'PM SHRI' },
+    { id: 'staff', label: 'Staff' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -154,7 +155,7 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           {/* Zone 2: Concise single-line navigation links */}
-          <nav className="hidden lg:flex items-center gap-5 text-sm font-medium text-stone-600">
+          <nav className="hidden lg:flex items-center gap-4 text-sm font-medium text-stone-600">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -169,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Zone 3: 1 Primary Action + Utility Search */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2.5 shrink-0">
             <button
               onClick={onOpenSearch}
               className="p-2 text-stone-500 hover:text-stone-900 rounded-lg hover:bg-stone-100 transition-colors"
@@ -179,11 +180,20 @@ export const Header: React.FC<HeaderProps> = ({
               <Search className="w-4 h-4" />
             </button>
 
+            {onOpenAdmission && (
+              <button
+                onClick={onOpenAdmission}
+                className="px-3.5 py-2 text-xs font-bold text-amber-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors shadow-xs whitespace-nowrap shrink-0 flex items-center gap-1.5"
+              >
+                <span>Online Admission 2026</span>
+              </button>
+            )}
+
             <button
-              onClick={() => handleNavClick('contact')}
-              className="px-4 py-2 text-xs font-semibold text-white bg-emerald-900 rounded-lg hover:bg-emerald-800 transition-colors shadow-xs whitespace-nowrap shrink-0"
+              onClick={() => handleNavClick('results')}
+              className="hidden sm:flex px-3 py-2 text-xs font-semibold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg transition-colors whitespace-nowrap shrink-0 items-center gap-1"
             >
-              Admissions & Enquiries
+              <span>Results</span>
             </button>
 
             {/* Mobile Menu Trigger */}
@@ -202,6 +212,20 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-stone-200 bg-white px-4 py-4 space-y-1 shadow-lg max-h-[80vh] overflow-y-auto">
+          {onOpenAdmission && (
+            <div className="pb-3 border-b border-stone-100 mb-2">
+              <button
+                onClick={() => {
+                  onOpenAdmission();
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full py-2.5 px-4 bg-amber-400 hover:bg-amber-300 text-amber-950 font-bold rounded-lg text-xs shadow-xs text-center"
+              >
+                Apply Online for Admission (2026–27)
+              </button>
+            </div>
+          )}
+
           {navItems.map((item) => (
             <button
               key={item.id}
