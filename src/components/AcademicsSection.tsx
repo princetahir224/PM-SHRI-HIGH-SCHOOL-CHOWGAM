@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import { 
   BookOpen, 
-  GraduationCap, 
-  FileText, 
-  Calendar, 
   Award, 
   CheckCircle, 
   Download, 
-  Search, 
   HelpCircle,
-  ExternalLink,
-  Layers,
   Sparkles
 } from 'lucide-react';
 import { ACADEMIC_CLASSES_DATA, AcademicClass } from '../data/schoolData';

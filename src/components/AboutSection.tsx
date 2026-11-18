@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  Mountain, 
   Target, 
   Sparkles, 
   Award, 
@@ -9,8 +8,6 @@ import {
   Edit3, 
   CheckCircle2, 
   TreePine, 
-  Sun,
-  Wind,
   Phone,
   Mail
 } from 'lucide-react';

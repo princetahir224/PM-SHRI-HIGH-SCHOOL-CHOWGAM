@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { 
   Building, 
   Laptop, 
-  BookOpen, 
   Droplet, 
-  ShieldAlert, 
   Sparkles, 
   CheckCircle2, 
   Clock, 
@@ -97,7 +95,7 @@ export const FacilitiesSection: React.FC<FacilitiesSectionProps> = ({
               School Facilities & Learning Infrastructure
             </h2>
             <p className="mt-4 text-stone-600 text-sm sm:text-base leading-relaxed">
-              Our campus spans approximately 3 acres in the Chowgam mini-valley, featuring two educational buildings, dedicated smart learning spaces, an ICT computer lab, separate sanitation blocks, and inclusive barrier-free facilities.
+              Our campus spans approximately 3 acres in the Chowgam mini-valley, featuring one main two-story building alongside two ACRs (Additional Classrooms), dedicated smart learning spaces, an ICT computer lab, separate sanitation blocks, and inclusive barrier-free facilities.
             </p>
           </div>
 

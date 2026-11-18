@@ -2,14 +2,7 @@ import React from 'react';
 import { 
   Compass, 
   BookOpen, 
-  Laptop, 
-  MapPin, 
-  Users, 
-  ArrowRight, 
-  Calendar, 
-  Bell, 
-  Building,
-  CheckCircle2
+  Users
 } from 'lucide-react';
 import { SCHOOL_IMAGES } from '../data/assets';
 import { INITIAL_SCHOOL_INFO, NoticeItem } from '../data/schoolData';
@@ -255,13 +248,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* 2. School Buildings */}
             <div className="border-l border-stone-200 pl-4">
               <div className="text-2xl sm:text-3xl font-extrabold text-stone-900 tabular-nums">
-                2 Buildings
+                1 Main + 2 ACRs
               </div>
               <div className="text-xs sm:text-sm font-medium text-stone-600 mt-1">
-                Two-Story Main Block
+                Two-Story Main Building
               </div>
               <div className="text-[11px] text-stone-400">
-                + Auxiliary Learning Block
+                + Two Additional Classrooms (ACRs)
               </div>
             </div>
 

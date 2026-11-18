@@ -10,7 +10,6 @@ import {
   Briefcase, 
   Flag, 
   Compass,
-  ArrowRight,
   CheckCircle2
 } from 'lucide-react';
 import { BEYOND_CLASSROOM_DOMAINS, DevelopmentDomain } from '../data/schoolData';

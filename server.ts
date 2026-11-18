@@ -104,7 +104,7 @@ async function startServer() {
   app.use(express.json());
 
   // 1. GET /api/jkbose/notices - Returns all JKBOSE board notices
-  app.get('/api/jkbose/notices', (req: Request, res: Response) => {
+  app.get('/api/jkbose/notices', (_req: Request, res: Response) => {
     res.json({
       success: true,
       notices: liveJkboseNotices,
@@ -114,7 +114,7 @@ async function startServer() {
   });
 
   // 2. GET & POST /api/jkbose/sync - Simulates auto-update/refresh of board circulars
-  const handleSync = (req: Request, res: Response) => {
+  const handleSync = (_req: Request, res: Response) => {
     lastSyncedTime = new Date().toISOString();
     res.json({
       success: true,
@@ -129,7 +129,7 @@ async function startServer() {
   // 3. POST /api/kashmir-desk/ai-updates - AI & Google Search Intelligence Desk for Kashmir School Education
   app.post('/api/kashmir-desk/ai-updates', async (req: Request, res: Response) => {
     try {
-      const { query, prompt, category } = req.body || {};
+      const { query, prompt } = req.body || {};
       const userQuestion = query || prompt || "Summarize the latest JKBOSE and Kashmir School Education Department updates for secondary school students.";
 
       if (ai) {
@@ -400,7 +400,7 @@ Ensure questions test real conceptual understanding appropriate for ${studentCla
   // Mount Vite middleware in development, or serve dist in production
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.resolve(__dirname, 'dist')));
-    app.get('*', (req: Request, res: Response) => {
+    app.get('*', (_req: Request, res: Response) => {
       res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
     });
   } else {

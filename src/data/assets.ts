@@ -1,3 +1,7 @@
+import smartClassroomImg from '../assets/images/smart_classroom_ict_1792911690664.jpg';
+import libraryReadingImg from '../assets/images/school_library_reading_1792911691547.jpg';
+import greenCampusImg from '../assets/images/green_campus_valley_1792911692015.jpg';
+
 export const SCHOOL_IMAGES = {
   // Official uploaded photograph of the school building and campus
   hero: "/assets/aistudio/Vibrant_Smart_Campus_in_the_Mountains_848daa73.png",
@@ -11,9 +15,9 @@ export const SCHOOL_IMAGES = {
   // Official uploaded photographs of the Agaaz Space & Science Lab
   agaazLab1: "/assets/aistudio/IMG20240423153129_f11261fa.jpg",
   agaazLab2: "/assets/aistudio/WhatsApp_Image_2026-11-18_at_6.08.26_PM_d412d812.jpeg",
-  smartClassroom: "/src/assets/images/smart_classroom_ict_1792911690664.jpg",
-  library: "/src/assets/images/school_library_reading_1792911691547.jpg",
-  greenCampus: "/src/assets/images/green_campus_valley_1792911692015.jpg",
+  smartClassroom: smartClassroomImg,
+  library: libraryReadingImg,
+  greenCampus: greenCampusImg,
   valleyScenery: "/assets/aistudio/Vibrant_Smart_Campus_in_the_Mountains_848daa73.png",
 };
 
@@ -51,7 +55,7 @@ export const GALLERY_ITEMS = [
     title: "Official Campus & Two-Story Building — PM SHRI GHS Chowgam",
     category: "Campus & Landscape",
     image: SCHOOL_IMAGES.actualCampus,
-    caption: "Authentic view of PM SHRI Govt High School Chowgam (Zone Shangas / Shanglus, Dist. Anantnag) featuring the two-story red-brick building, manicured gardens, and mountain backdrop."
+    caption: "Authentic view of PM SHRI Govt High School Chowgam (Zone Shangus, Dist. Anantnag) featuring the two-story red-brick building, manicured gardens, and mountain backdrop."
   },
   {
     id: "gal-headmaster",

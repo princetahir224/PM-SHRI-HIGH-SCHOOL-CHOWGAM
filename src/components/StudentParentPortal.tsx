@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import { 
-  Users, 
   Calendar, 
-  Clock, 
-  BookCheck, 
-  MessageSquare, 
   CheckCircle2, 
   FileCheck, 
-  Sparkles,
-  HelpCircle,
   Phone,
   Mail
 } from 'lucide-react';

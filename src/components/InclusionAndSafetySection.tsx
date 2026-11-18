@@ -4,12 +4,9 @@ import {
   ShieldCheck, 
   HeartHandshake, 
   Droplet, 
-  ShieldPlus, 
-  Smile, 
   CheckCircle2, 
   AlertTriangle,
-  Users,
-  Eye
+  Users
 } from 'lucide-react';
 
 export const InclusionAndSafetySection: React.FC = () => {
@@ -196,9 +193,12 @@ export const InclusionAndSafetySection: React.FC = () => {
                 <HeartHandshake className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold text-stone-900 mb-2">First-Aid Station</h3>
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                Emergency first-aid cabinet with bandages, antiseptics, thermal blankets, and resting cot managed by designated faculty members.
+              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-3">
+                Emergency first-aid cabinet with bandages, antiseptics, thermal blankets, and resting cot.
               </p>
+              <div className="text-xs font-semibold text-rose-900 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2">
+                First-Aid Contact: <span className="font-bold">Mr. Ajaz Ahmad Wani (Ajaz Sir)</span>
+              </div>
             </div>
           </div>
         )}

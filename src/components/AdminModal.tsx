@@ -5,18 +5,12 @@ import {
   Save, 
   RotateCcw, 
   CheckCircle2, 
-  PlusCircle, 
-  Edit3, 
-  Users, 
-  Building, 
-  FileText,
-  Sliders
+  PlusCircle
 } from 'lucide-react';
 import { 
   StaffMember, 
   NoticeItem, 
-  FacilityItem, 
-  QualityIndicator 
+  FacilityItem
 } from '../data/schoolData';
 
 interface AdminModalProps {

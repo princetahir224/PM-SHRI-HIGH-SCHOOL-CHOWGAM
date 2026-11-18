@@ -55,7 +55,7 @@ export interface BookChapter {
 
 export interface LibraryBook {
   id: string;
-  catalogCode: string;
+  catalogueCode: string;
   title: string;
   subtitle: string;
   author: string;
@@ -146,7 +146,7 @@ export const CURATED_READING_PATHS: CuratedReadingPath[] = [
 export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   {
     id: 'book-agaaz-sky',
-    catalogCode: 'CHW-AGA-01',
+    catalogueCode: 'CHW-AGA-01',
     title: 'The Agaaz Night Sky & Telescopic Atlas',
     subtitle: 'Observing Planets, Orbits & Indian Space Missions from Chowgam',
     author: 'Mr. Muzaffer Rasool Malik (Agaaz Lab In-charge)',
@@ -260,7 +260,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-physics-light',
-    catalogCode: 'CHW-SCI-02',
+    catalogueCode: 'CHW-SCI-02',
     title: 'Foundations of Physics: Light, Mirrors & Motion',
     subtitle: 'JKBOSE Secondary Physics Companion with Practical Insights',
     author: 'Science Faculty, PM SHRI GHS Chowgam',
@@ -381,7 +381,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-himalayan-eco',
-    catalogCode: 'CHW-SCI-03',
+    catalogueCode: 'CHW-SCI-03',
     title: 'Living World & Himalayan Ecology',
     subtitle: 'Cells, Plant Biology & Biodiversity of South Kashmir’s Valleys',
     author: 'Eco-Club & Biology Desk, GHS Chowgam',
@@ -490,7 +490,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-chemistry-life',
-    catalogCode: 'CHW-SCI-04',
+    catalogueCode: 'CHW-SCI-04',
     title: 'Chemistry in Everyday Life: Acids, Metals & Carbon',
     subtitle: 'Atomic Patterns, pH Balance & Organic Foundations',
     author: 'Science Lab Desk, PM SHRI GHS Chowgam',
@@ -590,7 +590,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-algebra-quad',
-    catalogCode: 'CHW-MAT-01',
+    catalogueCode: 'CHW-MAT-01',
     title: 'Mastering Algebra & Quadratic Equations',
     subtitle: 'From Linear Equations & Identities to Quadratic Roots',
     author: 'Mr. Tahir Ahmad Kumar (M.Sc. Math, Exam In-charge)',
@@ -702,7 +702,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-geometry-trig',
-    catalogCode: 'CHW-MAT-02',
+    catalogueCode: 'CHW-MAT-02',
     title: 'Geometry, Mensuration & Trigonometry',
     subtitle: 'Visual Theorems, Circles, Volumes & Trigonometric Ratios',
     author: 'Mathematics Desk, PM SHRI GHS Chowgam',
@@ -803,7 +803,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-number-magic',
-    catalogCode: 'CHW-MAT-03',
+    catalogueCode: 'CHW-MAT-03',
     title: 'Number Magic & Mental Arithmetic',
     subtitle: 'Building Rock-Solid Foundations in Fractions, Ratios & Percentages',
     author: 'Middle Wing Mathematics Faculty',
@@ -898,7 +898,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-eng-grammar',
-    catalogCode: 'CHW-ENG-01',
+    catalogueCode: 'CHW-ENG-01',
     title: 'English Grammar & Effective Writing',
     subtitle: 'Sentence Architecture, Tenses, Voice, Narration & Letters',
     author: 'Mr. Nazir Ahmad Khan (Master, English Dept.)',
@@ -1009,7 +1009,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-inspiring-stories',
-    catalogCode: 'CHW-ENG-02',
+    catalogueCode: 'CHW-ENG-02',
     title: 'Anthology of Inspiring Stories & Poems',
     subtitle: 'Mountain Tales, Scientists’ Childhoods & Classic Verse',
     author: 'Literary & Debate Club, GHS Chowgam',
@@ -1107,7 +1107,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-kashmir-heritage',
-    catalogCode: 'CHW-HER-01',
+    catalogueCode: 'CHW-HER-01',
     title: 'Kashmiri Heritage, Lal Ded & Valley Folklore',
     subtitle: 'Mother Tongue Wisdom, Chinar Ecology & Cultural Craftsmanship',
     author: 'Mr. Ab Rashid Wani (Master, Kashmiri Heritage)',
@@ -1219,7 +1219,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-urdu-qawaid',
-    catalogCode: 'CHW-URD-01',
+    catalogueCode: 'CHW-URD-01',
     title: 'Urdu Qawaid Aur Insha Pardazi',
     subtitle: 'Foundational Urdu Grammar, Idioms, Letters & Essay Composition',
     author: 'Mr. Gulzar Ahmad Khan (Master, Urdu Dept.)',
@@ -1317,7 +1317,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-jk-history',
-    catalogCode: 'CHW-SOC-01',
+    catalogueCode: 'CHW-SOC-01',
     title: 'History of Jammu, Kashmir & Modern India',
     subtitle: 'Chronicles, Freedom Movement & Constitutional Democracy',
     author: 'Mr. Gh Mohd Rafique (Master, Social Sciences)',
@@ -1416,7 +1416,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-himalayan-geo',
-    catalogCode: 'CHW-SOC-02',
+    catalogueCode: 'CHW-SOC-02',
     title: 'Geography of India & The Himalayan Belt',
     subtitle: 'Mountain Formation, River Basins, Climate & Horticulture',
     author: 'Social Science Faculty, GHS Chowgam',
@@ -1515,7 +1515,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-ict-essentials',
-    catalogCode: 'CHW-ICT-01',
+    catalogueCode: 'CHW-ICT-01',
     title: 'ICT Essentials: Computing, Typing & Cyber Safety',
     subtitle: 'Hardware, Office Suites, DIKSHA Learning & Digital Hygiene',
     author: 'ICT Computer Lab, PM SHRI GHS Chowgam',
@@ -1621,7 +1621,7 @@ export const DIGITAL_LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     id: 'book-values-career',
-    catalogCode: 'CHW-GEN-01',
+    catalogueCode: 'CHW-GEN-01',
     title: 'Values for Life, Career Compass & Study Habits',
     subtitle: 'Smart Study Methods, Integrity & Post-Matric Pathways',
     author: 'Career Guidance & Life Skills Cell, GHS Chowgam',

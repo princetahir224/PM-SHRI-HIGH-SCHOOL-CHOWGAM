@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, X, BookOpen, Building, Bell, ArrowRight } from 'lucide-react';
+import { Search, BookOpen, Building, Bell, ArrowRight } from 'lucide-react';
 import { FacilityItem, NoticeItem, AcademicClass } from '../data/schoolData';
 
 interface SearchModalProps {

@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { 
-  Image as ImageIcon, 
   Maximize2, 
-  X, 
   ChevronLeft, 
   ChevronRight, 
-  ShieldCheck,
-  Compass
+  ShieldCheck
 } from 'lucide-react';
 import { GALLERY_ITEMS } from '../data/assets';
 

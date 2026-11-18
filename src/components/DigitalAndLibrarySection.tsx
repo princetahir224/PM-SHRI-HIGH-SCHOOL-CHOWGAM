@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Laptop, 
-  BookOpen, 
-  Monitor, 
-  Wifi, 
-  ShieldAlert, 
-  Compass, 
-  CheckCircle2, 
-  Sparkles,
-  BookMarked,
-  Search
+  CheckCircle2
 } from 'lucide-react';
 import { SCHOOL_IMAGES } from '../data/assets';
 

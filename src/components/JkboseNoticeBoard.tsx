@@ -3,20 +3,16 @@ import {
   Bell, 
   RotateCw, 
   Search, 
-  Filter, 
   FileText, 
   Sparkles, 
   AlertCircle, 
-  CheckCircle2, 
   Send, 
   Calendar, 
   ArrowRight, 
   Printer, 
   Download, 
-  ExternalLink,
   ShieldCheck,
-  Bot,
-  Zap
+  Bot
 } from 'lucide-react';
 import { 
   JkboseNotice, 

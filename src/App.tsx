@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
@@ -126,7 +126,7 @@ export default function App() {
           s.name.includes('Tahir Ahmad Kumar') && s.qualifications.includes('M.Sc. Math')
         );
         const hasScienceLabIncharge = parsed.some((s: StaffMember) =>
-          s.slotNumber === 9 && s.role.includes('Science Lab')
+          s.slotNumber === 9 && s.role.includes('Science Lab') && s.role.includes('First-Aid')
         );
         const hasMuzzaferAgaazIncharge = parsed.some((s: StaffMember) =>
           s.slotNumber === 11 && s.role.includes('Agaaz Lab In-charge')
@@ -150,7 +150,10 @@ export default function App() {
       if (saved) {
         const parsed: FacilityItem[] = JSON.parse(saved);
         const hasAgaazLab = parsed.some((f) => f.id === 'fac-agaaz');
-        if (!hasAgaazLab) {
+        const hasFirstAidAjaz = parsed.some((f) => f.id === 'fac-14' && f.name.includes('Ajaz'));
+        const hasCatalogueWord = parsed.some((f) => f.id === 'fac-5' && f.features.some(feat => feat.includes('catalogue')));
+        const hasTwoAcrs = parsed.some((f) => f.id === 'fac-2' && f.name.includes('ACR'));
+        if (!hasAgaazLab || !hasFirstAidAjaz || !hasCatalogueWord || !hasTwoAcrs) {
           localStorage.setItem('pmshri_facilities', JSON.stringify(INITIAL_FACILITIES));
           return INITIAL_FACILITIES;
         }
@@ -174,7 +177,16 @@ export default function App() {
   const [indicators, setIndicators] = useState<QualityIndicator[]>(() => {
     try {
       const saved = localStorage.getItem('pmshri_indicators');
-      return saved ? JSON.parse(saved) : INITIAL_QUALITY_INDICATORS;
+      if (saved) {
+        const parsed: QualityIndicator[] = JSON.parse(saved);
+        const hasTwoAcrsIndicator = parsed.some((i) => i.id === 'pm-4' && i.evidence.includes('ACR'));
+        if (!hasTwoAcrsIndicator) {
+          localStorage.setItem('pmshri_indicators', JSON.stringify(INITIAL_QUALITY_INDICATORS));
+          return INITIAL_QUALITY_INDICATORS;
+        }
+        return parsed;
+      }
+      return INITIAL_QUALITY_INDICATORS;
     } catch {
       return INITIAL_QUALITY_INDICATORS;
     }
@@ -321,7 +333,7 @@ export default function App() {
         <FacilitiesSection
           facilities={facilities}
           onOpenAdmin={() => setAdminOpen(true)}
-          onEditFacility={(fac) => setAdminOpen(true)}
+          onEditFacility={() => setAdminOpen(true)}
         />
 
         {/* 4. Academics & Learning Excellence */}

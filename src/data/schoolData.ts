@@ -81,7 +81,7 @@ export const INITIAL_SCHOOL_INFO = {
     landmark: "Chowgam Valley, Foot of Pine Mountains"
   },
   infrastructure: {
-    buildings: "Two school buildings (Two-story red-brick main building with balcony colonnade + second auxiliary block)",
+    buildings: "One main two-story red-brick building with balcony colonnade + two ACRs (Additional Classrooms)",
     campusArea: "Approximately 3 acres (subject to official land record verification)",
     staffCount: 13,
     classrooms: "Well-ventilated learning rooms with mountain views",
@@ -119,21 +119,21 @@ export const INITIAL_SCHOOL_INFO = {
 export const INITIAL_FACILITIES: FacilityItem[] = [
   {
     id: "fac-1",
-    name: "Two-Story Main School Building",
+    name: "Main Two-Story School Building",
     category: "infrastructure",
-    description: "Solid multi-story concrete and timber educational block housing main high school classrooms, administrative chamber, and smart rooms with scenic mountain orientation.",
+    description: "Primary two-story concrete and red-brick educational building housing main high school classrooms, administrative chamber, and smart rooms with scenic mountain orientation.",
     status: "Operational",
     accessibility: "Ground floor ramp access and wide corridors.",
     features: ["Multiple well-lit classrooms", "Natural ventilation", "High thermal insulation for mountain climate"]
   },
   {
     id: "fac-2",
-    name: "Second School Building",
+    name: "Two ACRs (Additional Classrooms)",
     category: "infrastructure",
-    description: "Dedicated auxiliary building providing additional flexible classrooms, activity spaces, and designated study zones.",
+    description: "Two dedicated Additional Classroom (ACR) blocks providing flexible classrooms, activity spaces, and designated study zones.",
     status: "Operational",
-    accessibility: "Level entry threshold suitable for all students.",
-    features: ["Activity-oriented space", "Group learning layout", "Direct connection to open grounds"]
+    accessibility: "Level entry thresholds suitable for all students.",
+    features: ["Two separate ACR classroom blocks", "Group learning layout", "Direct connection to open grounds"]
   },
   {
     id: "fac-3",
@@ -160,7 +160,7 @@ export const INITIAL_FACILITIES: FacilityItem[] = [
     description: "Peaceful reading sanctuary stocked with academic reference textbooks, Kashmiri and Urdu literature, English storybooks, scientific magazines, and general knowledge works.",
     status: "Operational",
     accessibility: "Well-spaced reading aisles and seated desks with natural window illumination.",
-    features: ["Curated book catalog", "Reading club corner", "Lending register"]
+    features: ["Curated book catalogue", "Reading club corner", "Lending register"]
   },
   {
     id: "fac-agaaz",
@@ -252,12 +252,12 @@ export const INITIAL_FACILITIES: FacilityItem[] = [
   },
   {
     id: "fac-14",
-    name: "First-Aid & Student Safety Unit",
+    name: "First-Aid & Student Safety Unit (Contact: Mr. Ajaz Sir)",
     category: "safety",
-    description: "Equipped first-aid station with sterile dressings, emergency medicines, antiseptic supplies, and trained designated staff.",
+    description: "Equipped first-aid station with sterile dressings, emergency medicines, antiseptic supplies, and resting cot. For first aid, contact Mr. Ajaz Ahmad Wani (Ajaz Sir, First-Aid & Science Lab In-charge).",
     status: "Operational",
     accessibility: "Immediate ground-floor access adjacent to HOI office.",
-    features: ["Standard emergency medical kit", "Stretcher & resting cot", "Direct contact with local PHC"]
+    features: ["First-Aid Contact: Mr. Ajaz Ahmad Wani (Ajaz Sir)", "Standard emergency medical kit & resting cot", "Direct contact with local PHC"]
   },
   {
     id: "fac-15",
@@ -497,9 +497,9 @@ export const INITIAL_QUALITY_INDICATORS: QualityIndicator[] = [
     id: "pm-4",
     domainNumber: 4,
     domainName: "School Infrastructure & Learning Environment",
-    target: "Maintain two school buildings in clean, well-insulated, aesthetic condition.",
+    target: "Maintain one main two-story school building and two ACRs in clean, well-insulated, aesthetic condition.",
     status: "Completed",
-    evidence: "Two-story main building and second block fully operational on campus.",
+    evidence: "Main two-story building and two ACRs (Additional Classrooms) fully operational on campus.",
     actionPlan: "Conduct regular seasonal maintenance before winter freeze.",
     lastUpdated: "October 2026"
   },
@@ -721,12 +721,12 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
   {
     id: "staff-9",
     slotNumber: 9,
-    role: "Teacher (Science Teacher & Science Lab In-charge)",
+    role: "Teacher (Science Teacher, Science Lab & First-Aid In-charge)",
     designation: "Teacher",
-    department: "Science & Composite Science Laboratory",
-    name: "Mr. Ajaz Ahmad Wani (Mr. Ajaz Ahmad)",
+    department: "Science, Composite Science Lab & First-Aid Unit",
+    name: "Mr. Ajaz Ahmad Wani (Mr. Ajaz Ahmad Sir)",
     qualifications: "B.Sc, B.Ed [Official Department Cadre]",
-    responsibilities: "Science Teacher & Science Laboratory In-charge overseeing the composite science laboratory, physics/chemistry/biology experimental apparatus, student practical sessions, laboratory safety standards, and inquiry-based STEM demonstrations.",
+    responsibilities: "Science Teacher, Science Laboratory In-charge & First-Aid In-charge overseeing the school First-Aid & Student Safety Unit (contact Mr. Ajaz Sir for first aid), composite science laboratory, experimental apparatus, laboratory safety standards, and STEM demonstrations.",
     status: "Verified Staff"
   },
   {

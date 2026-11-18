@@ -1,12 +1,7 @@
 import React from 'react';
 import { 
-  Building2, 
-  MapPin, 
   Lock, 
-  ExternalLink, 
-  Heart,
-  TreePine,
-  ShieldCheck
+  TreePine
 } from 'lucide-react';
 import { INITIAL_SCHOOL_INFO } from '../data/schoolData';
 

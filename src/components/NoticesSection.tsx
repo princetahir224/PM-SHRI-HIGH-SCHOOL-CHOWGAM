@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { 
-  Bell, 
   Search, 
-  Filter, 
   Calendar, 
-  Download, 
   FileText, 
   PlusCircle, 
-  ExternalLink,
-  Printer,
-  Sparkles
+  Printer
 } from 'lucide-react';
 import { NoticeItem } from '../data/schoolData';
 

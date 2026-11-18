@@ -172,7 +172,7 @@ export const SmartDigitalLibrary: React.FC = () => {
         book.title.toLowerCase().includes(q) ||
         book.subtitle.toLowerCase().includes(q) ||
         book.author.toLowerCase().includes(q) ||
-        book.catalogCode.toLowerCase().includes(q) ||
+        book.catalogueCode.toLowerCase().includes(q) ||
         book.category.toLowerCase().includes(q) ||
         book.keyTopics.some((t) => t.toLowerCase().includes(q));
       return matchesCategory && matchesClass && matchesSearch;
@@ -274,9 +274,9 @@ export const SmartDigitalLibrary: React.FC = () => {
                 />
               )}
 
-              {/* Top Catalog Code & Class */}
+              {/* Top Catalogue Code & Class */}
               <div className="relative z-10 flex items-center justify-between gap-2 text-[10px] font-mono tabular-nums text-white/85">
-                <span className="tracking-wider">{book.catalogCode}</span>
+                <span className="tracking-wider">{book.catalogueCode}</span>
                 <span className={book.coverTheme.accentTextClass}>{book.classTag}</span>
               </div>
 
@@ -731,7 +731,7 @@ export const SmartDigitalLibrary: React.FC = () => {
           </div>
         )}
 
-        {/* 3B. ALL BOOKS CATALOG GRID VIEW */}
+        {/* 3B. ALL BOOKS CATALOGUE GRID VIEW */}
         {viewTab === 'grid' && (
           <div>
             {filteredBooks.length === 0 ? (
@@ -914,7 +914,7 @@ export const SmartDigitalLibrary: React.FC = () => {
             <div className="flex items-start justify-between gap-4 pb-5 border-b border-stone-200">
               <div>
                 <div className="text-xs font-mono text-emerald-800 font-semibold">
-                  {previewBook.catalogCode} · {previewBook.category} · {previewBook.classTag}
+                  {previewBook.catalogueCode} · {previewBook.category} · {previewBook.classTag}
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-stone-900 mt-1">
                   {previewBook.title}

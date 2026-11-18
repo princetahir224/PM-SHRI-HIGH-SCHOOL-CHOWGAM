@@ -2,19 +2,13 @@ import React, { useState } from 'react';
 import { 
   Award, 
   Search, 
-  Download, 
   FileText, 
   Printer, 
   PlusCircle, 
   CheckCircle2, 
   Phone, 
-  Calendar, 
-  User, 
   GraduationCap, 
   FileCheck, 
-  ChevronRight, 
-  BookOpen, 
-  Filter, 
   Upload, 
   X,
   Eye,
@@ -22,11 +16,9 @@ import {
 } from 'lucide-react';
 import { 
   StudentResult, 
-  SubjectScore, 
   PdfResultGazette, 
   calculateGrade 
 } from '../data/resultsAndAdmissionsData';
-import { INITIAL_SCHOOL_INFO } from '../data/schoolData';
 
 interface ResultsCornerProps {
   results: StudentResult[];

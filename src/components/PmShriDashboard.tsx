@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import { 
-  BarChart3, 
   CheckCircle2, 
   Clock, 
   AlertCircle, 
   Edit3, 
-  Filter, 
-  Search, 
-  Calendar,
-  FileCheck2,
-  ShieldCheck,
-  TrendingUp
+  Search
 } from 'lucide-react';
 import { QualityIndicator } from '../data/schoolData';
 

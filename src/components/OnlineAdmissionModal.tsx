@@ -5,14 +5,9 @@ import {
   CheckCircle2, 
   Printer, 
   Phone, 
-  Calendar, 
-  FileText, 
   AlertCircle, 
   Search, 
   Send, 
-  Building2, 
-  ShieldCheck, 
-  HelpCircle,
   Mail,
   Copy,
   ExternalLink,
@@ -20,7 +15,6 @@ import {
   Check
 } from 'lucide-react';
 import { AdmissionApplication } from '../data/resultsAndAdmissionsData';
-import { INITIAL_SCHOOL_INFO } from '../data/schoolData';
 import { 
   SCHOOL_RECEIVER_EMAIL, 
   SECONDARY_RECEIVER_EMAIL, 

@@ -212,7 +212,7 @@ export const BookReaderModal: React.FC<BookReaderModalProps> = ({
           <div className="hidden md:block min-w-0 pl-2 border-l border-stone-300/40">
             <div className="text-sm font-bold truncate max-w-xs lg:max-w-md">{book.title}</div>
             <div className={`text-[11px] font-mono tabular-nums truncate ${mutedText}`}>
-              {book.catalogCode} · Chapter {chapter.chapterNumber} of {totalChapters} · {completedIds.length}/{totalChapters} completed
+              {book.catalogueCode} · Chapter {chapter.chapterNumber} of {totalChapters} · {completedIds.length}/{totalChapters} completed
             </div>
           </div>
         </div>
@@ -585,7 +585,7 @@ export const BookReaderModal: React.FC<BookReaderModalProps> = ({
               <article className="p-6 sm:p-10 md:p-14">
                 <div className={`flex items-center justify-between text-xs font-mono pb-4 mb-6 border-b border-stone-300/40 ${mutedText}`}>
                   <span>
-                    {book.title} · {book.catalogCode}
+                    {book.title} · {book.catalogueCode}
                   </span>
                   <span className="tabular-nums">
                     Chapter {chapter.chapterNumber} / {totalChapters}

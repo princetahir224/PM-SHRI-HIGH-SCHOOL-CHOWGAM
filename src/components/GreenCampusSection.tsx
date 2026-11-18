@@ -2,11 +2,8 @@ import React from 'react';
 import { 
   TreePine, 
   Droplet, 
-  Sparkles, 
   Trash2, 
-  Sun, 
   CheckCircle2, 
-  Mountain,
   Leaf
 } from 'lucide-react';
 import { SCHOOL_IMAGES } from '../data/assets';

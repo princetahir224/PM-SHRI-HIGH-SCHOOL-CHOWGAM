@@ -6,10 +6,7 @@ import {
   Clock, 
   Send, 
   CheckCircle2, 
-  Navigation, 
-  Building2,
-  HelpCircle,
-  Compass
+  Navigation
 } from 'lucide-react';
 import { INITIAL_SCHOOL_INFO } from '../data/schoolData';
 import { SCHOOL_IMAGES } from '../data/assets';

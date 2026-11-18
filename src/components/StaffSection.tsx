@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { 
-  Users, 
-  GraduationCap, 
   Mail, 
   Phone,
-  Award, 
   Edit3, 
-  CheckCircle2, 
-  UserCheck, 
-  Briefcase,
-  HelpCircle
+  UserCheck
 } from 'lucide-react';
 import { StaffMember } from '../data/schoolData';
 import { SCHOOL_IMAGES } from '../data/assets';
@@ -319,17 +313,17 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
               </div>
             </div>
 
-            {/* Science Lab In-charge */}
+            {/* Science Lab & First-Aid In-charge */}
             <div className="p-3.5 bg-teal-950/40 rounded-xl border border-teal-800/60 flex flex-col justify-between">
               <div>
                 <div className="text-teal-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
-                  <span>🔬 Science Lab In-charge</span>
+                  <span>🔬 Science Lab &amp; First-Aid In-charge</span>
                 </div>
-                <div className="text-base font-bold text-teal-100 mt-0.5">Mr. Ajaz Ahmad Wani</div>
-                <div className="text-stone-300 text-[11px] mt-0.5">Science Teacher · Composite Science Lab, Practical Sessions & STEM Experiments</div>
+                <div className="text-base font-bold text-teal-100 mt-0.5">Mr. Ajaz Ahmad Wani (Ajaz Sir)</div>
+                <div className="text-stone-300 text-[11px] mt-0.5">Science Teacher · Composite Science Lab, Practicals &amp; School First-Aid Unit</div>
               </div>
               <div className="mt-2.5 pt-2 border-t border-teal-800/40 text-[11px] text-teal-200/80">
-                <span>Science Practical & Innovation Lab</span>
+                <span>Contact Mr. Ajaz Sir for First Aid &amp; Science Lab</span>
               </div>
             </div>
           </div>
@@ -460,7 +454,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                         )}
                         {isSlot9Ajaz && (
                           <span className="bg-teal-200 text-teal-950 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
-                            Science Lab In-charge
+                            Science Lab &amp; First-Aid
                           </span>
                         )}
                         {isSlot10Anzar && (
@@ -470,7 +464,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                         )}
                         {isSlot11Muzzafer && (
                           <span className="bg-teal-100 text-teal-900 text-[10px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">
-                            Science Teacher
+                            Agaaz Lab In-charge
                           </span>
                         )}
                       </div>
@@ -548,10 +542,10 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                     {isSlot9Ajaz && (
                       <div className="mb-3 p-2 bg-teal-50 border border-teal-200 rounded-lg text-xs">
                         <span className="font-bold text-teal-950 flex items-center gap-1">
-                          🔬 Assigned Role: Science Lab In-charge & Science Teacher
+                          🔬 Assigned Role: Science Lab &amp; First-Aid In-charge
                         </span>
                         <p className="text-[11px] text-teal-900 mt-0.5">
-                          Directs the composite science laboratory, manages experimental kits and apparatus, laboratory safety protocols, and STEM inquiry.
+                          For First Aid, contact Mr. Ajaz Sir. Also directs the composite science laboratory, experimental kits, lab safety, and STEM inquiry.
                         </p>
                       </div>
                     )}
@@ -570,10 +564,10 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
                     {isSlot11Muzzafer && (
                       <div className="mb-3 p-2 bg-teal-50/70 border border-teal-200 rounded-lg text-xs">
                         <span className="font-bold text-teal-950 flex items-center gap-1">
-                          🔬 Assigned Role: Science Teacher
+                          🔭 Assigned Role: Agaaz Lab In-charge &amp; Science Teacher
                         </span>
                         <p className="text-[11px] text-teal-900 mt-0.5">
-                          Delivering secondary and middle-wing core science curriculum, interactive experiments, and promoting scientific curiosity.
+                          Teacher In-charge of the Agaaz Space &amp; Science Lab (telescope, planetary &amp; rocket models) and core science instruction.
                         </p>
                       </div>
                     )}
@@ -640,7 +634,7 @@ export const StaffSection: React.FC<StaffSectionProps> = ({
           </div>
 
           <div className="mt-8 p-4 bg-stone-100 rounded-lg text-xs text-stone-600 text-center leading-relaxed">
-            <strong>Institutional Cadre Summary (Zone Shangus):</strong> PM SHRI Govt High School Chowgam is led by Headmaster Mr. Shareef Ahmad Khan (S.No 1, Phone: 7889725799), supported by Masters (S.No 2 to 7: Mr. Ab Raheem Shairgojri, Mr. Gh Mohd Rafique [Samagra In-charge], Mr. Nazir Ahmad Khan, Mr. Gulzar Ahmad Khan, Mr. Ab Rashid Wani, Mr. Muzzaffer Ahmad Khan [PM SHRI In-charge, Phone: 9541011971]), Teachers (S.No 8 to 12: Mr. Altaf Ahmad [Teacher & Office Clerk / In-charge, Phone: 7889635278], Mr. Ajaz Ahmad Wani [Science Teacher & Science Lab In-charge], Mr. Mohd Anzar Khan [Sports In-charge], Mr. Muzzafer Rasool Malik [Science Teacher], Mr. Tahir Ahmad Kumar [ICT & Examination In-charge, Math Teacher, Phone: 8803497224]), and Office Desk (S.No 13).
+            <strong>Institutional Cadre Summary (Zone Shangus):</strong> PM SHRI Govt High School Chowgam is led by Headmaster Mr. Shareef Ahmad Khan (S.No 1, Phone: 7889725799), supported by Masters (S.No 2 to 7: Mr. Ab Raheem Shairgojri, Mr. Gh Mohd Rafique [Samagra In-charge], Mr. Nazir Ahmad Khan, Mr. Gulzar Ahmad Khan, Mr. Ab Rashid Wani, Mr. Muzzaffer Ahmad Khan [PM SHRI In-charge, Phone: 9541011971]), Teachers (S.No 8 to 12: Mr. Altaf Ahmad [Teacher & Office Clerk / In-charge, Phone: 7889635278], Mr. Ajaz Ahmad Wani [Science Teacher, Science Lab & First-Aid In-charge], Mr. Mohd Anzar Khan [Sports In-charge], Mr. Muzzafer Rasool Malik [Science Teacher & Agaaz Lab In-charge], Mr. Tahir Ahmad Kumar [ICT & Examination In-charge, Math Teacher, Phone: 8803497224]), and Office Desk (S.No 13).
           </div>
         </div>
 

@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  Building2, 
   Menu, 
   X, 
   Search, 
-  Volume2, 
   Eye, 
-  Lock,
-  ChevronDown
+  Lock
 } from 'lucide-react';
-import { INITIAL_SCHOOL_INFO } from '../data/schoolData';
 
 interface HeaderProps {
   activeSection: string;
@@ -35,7 +31,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAdmission
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [academicsDropdown, setAcademicsDropdown] = useState(false);
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -53,7 +48,6 @@ export const Header: React.FC<HeaderProps> = ({
   const handleNavClick = (id: string) => {
     onNavigate(id);
     setMobileMenuOpen(false);
-    setAcademicsDropdown(false);
   };
 
   return (
