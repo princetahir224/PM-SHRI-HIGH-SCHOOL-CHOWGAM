@@ -25,7 +25,6 @@ import { AdminModal } from './components/AdminModal';
 import { SearchModal } from './components/SearchModal';
 import { ResultsCorner } from './components/ResultsCorner';
 import { OnlineAdmissionModal } from './components/OnlineAdmissionModal';
-import { AiTutorSection } from './components/AiTutorSection';
 import { SmartDigitalLibrary } from './components/SmartDigitalLibrary';
 
 import { 
@@ -349,9 +348,6 @@ export default function App() {
           onAddResult={handleAddResult}
           onAddGazette={handleAddGazette}
         />
-
-        {/* 4d. AI Study Tutor & Interactive Practice Questionnaire */}
-        <AiTutorSection />
 
         {/* 5. Smart Classroom, ICT Lab & School Library */}
         <DigitalAndLibrarySection

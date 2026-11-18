@@ -38,7 +38,6 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'academics', label: 'Academics' },
     { id: 'smart-digital-library', label: 'Library' },
     { id: 'results', label: 'Results' },
-    { id: 'ai-tutor', label: 'AI Tutor' },
     { id: 'jkbose-board', label: 'JKBOSE' },
     { id: 'pmshri', label: 'PM SHRI' },
     { id: 'staff', label: 'Staff' },

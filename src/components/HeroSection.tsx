@@ -127,14 +127,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
 
             <button
-              onClick={() => onNavigate('ai-tutor')}
-              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-emerald-950 bg-emerald-100 hover:bg-white rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
-            >
-              <BookOpen className="w-4 h-4 text-emerald-800" />
-              <span>AI Study Tutor & Quiz</span>
-            </button>
-
-            <button
               onClick={() => onNavigate('about')}
               className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-stone-100 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-xs rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
             >

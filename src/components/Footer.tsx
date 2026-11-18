@@ -86,11 +86,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdmin }) => {
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('ai-tutor')} className="hover:text-white transition-colors">
-                  AI Study Tutor & Practice Questionnaire
-                </button>
-              </li>
-              <li>
                 <button onClick={() => onNavigate('jkbose-board')} className="hover:text-amber-300 font-medium text-amber-200 transition-colors">
                   JKBOSE Live Notice Board & AI Desk
                 </button>
