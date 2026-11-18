@@ -13,8 +13,15 @@ import {
 } from 'lucide-react';
 import { SCHOOL_IMAGES } from '../data/assets';
 
-export const DigitalAndLibrarySection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'smart' | 'ict' | 'library'>('smart');
+interface DigitalAndLibrarySectionProps {
+  onOpenDigitalLibrary?: () => void;
+}
+
+export const DigitalAndLibrarySection: React.FC<DigitalAndLibrarySectionProps> = ({
+  onOpenDigitalLibrary,
+}) => {
+  const [activeTab, setActiveTab] = useState<'agaaz' | 'smart' | 'ict' | 'library'>('agaaz');
+  const [agaazPhotoIndex, setAgaazPhotoIndex] = useState<0 | 1>(0);
 
   return (
     <section id="digital-library" className="py-16 sm:py-24 bg-white border-b border-stone-200">
@@ -23,18 +30,28 @@ export const DigitalAndLibrarySection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <div className="text-xs uppercase tracking-widest font-semibold text-emerald-800 mb-2">
-            Modern Learning Spaces
+            Modern Learning Spaces & STEM Labs
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-            Smart Classroom, ICT Lab & School Library
+            Agaaz Lab, Smart Classroom, ICT Lab & Library
           </h2>
           <p className="mt-4 text-stone-600 text-sm sm:text-base leading-relaxed">
-            Bridging geographical distances through 21st-century technology and an enriching reading culture. Our students learn with interactive digital boards, hands-on computer systems, and a dedicated library.
+            Bridging geographical distances through hands-on space science instruments in our Agaaz Lab, interactive smart boards, computer systems, and a dedicated school library.
           </p>
         </div>
 
         {/* Tab Selector */}
         <div className="flex flex-wrap items-center gap-2 mb-10 pb-3 border-b border-stone-200">
+          <button
+            onClick={() => setActiveTab('agaaz')}
+            className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
+              activeTab === 'agaaz'
+                ? 'bg-emerald-900 text-white shadow-xs'
+                : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
+            }`}
+          >
+            Agaaz Space & Science Lab
+          </button>
           <button
             onClick={() => setActiveTab('smart')}
             className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
@@ -66,6 +83,126 @@ export const DigitalAndLibrarySection: React.FC = () => {
             Dedicated School Library
           </button>
         </div>
+
+        {/* Agaaz Space & Science Lab Showcase */}
+        {activeTab === 'agaaz' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <div className="lg:col-span-6 bg-stone-50 p-6 sm:p-8 rounded-xl border border-stone-200 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 text-xs uppercase font-mono text-emerald-800 mb-2">
+                  <span>Astronomy & Hands-On STEM Laboratory</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Zone Shangus</span>
+                </div>
+                <h3 className="text-2xl font-bold text-stone-900 mb-3">
+                  Agaaz Space & Science Lab
+                </h3>
+                <p className="text-stone-700 text-sm leading-relaxed mb-5">
+                  Our dedicated Agaaz Lab sparks scientific curiosity in astronomy, space exploration, physics, and earth sciences. Supervised by Teacher In-charge <strong>Mr. Muzaffer Rasool Malik</strong>, all scientific and astronomical instruments are available for practical student learning.
+                </p>
+
+                <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3">
+                  Available Lab Instruments & Apparatus:
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-stone-700">
+                  <div className="flex items-start gap-2 p-2.5 bg-white rounded-lg border border-stone-200/70">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                    <span><strong>Astronomical Telescope:</strong> Reflector telescope & tripod mount for sky and lunar observation.</span>
+                  </div>
+                  <div className="flex items-start gap-2 p-2.5 bg-white rounded-lg border border-stone-200/70">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                    <span><strong>Orbital & Planetary Kits:</strong> Sun-Earth-Moon apparatus, solar system & illuminated orbit models.</span>
+                  </div>
+                  <div className="flex items-start gap-2 p-2.5 bg-white rounded-lg border border-stone-200/70">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                    <span><strong>Rocketry & Space Models:</strong> ISRO launch vehicle scaled models & satellite assembly kits.</span>
+                  </div>
+                  <div className="flex items-start gap-2 p-2.5 bg-white rounded-lg border border-stone-200/70">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                    <span><strong>Optical & Science Tools:</strong> Microscopes, prisms, lenses, globes, weather & lab instrument kits.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-stone-200 flex flex-wrap items-center justify-between gap-2 text-xs text-stone-600">
+                <span>
+                  Teacher In-charge: <strong className="text-stone-900">Mr. Muzaffer Rasool Malik</strong> (Science Teacher)
+                </span>
+                <span className="font-mono text-emerald-800 font-semibold">All Instruments Available</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 flex flex-col gap-3">
+              <div className="rounded-xl overflow-hidden border border-stone-200 shadow-xs relative aspect-4/3 bg-stone-900">
+                <img
+                  src={agaazPhotoIndex === 0 ? SCHOOL_IMAGES.agaazLab1 : SCHOOL_IMAGES.agaazLab2}
+                  alt={agaazPhotoIndex === 0
+                    ? "Students and teachers demonstrating globes and orbital models in Agaaz Lab at PM SHRI GHS Chowgam"
+                    : "Agaaz Space & Science Lab showing reflector telescope, solar system apparatus, and planetary murals"}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/90 via-stone-950/50 to-transparent p-4 sm:p-5 text-white text-xs">
+                  <div className="font-semibold text-amber-300">
+                    {agaazPhotoIndex === 0
+                      ? "Agaaz Lab — Orbital & Rocket Models Session"
+                      : "Agaaz Lab — Reflector Telescope & Planetary Instruments"}
+                  </div>
+                  <p className="text-stone-200 text-[11px] mt-0.5">
+                    {agaazPhotoIndex === 0
+                      ? "Students inspecting Earth-Moon-Sun orbital mechanics and ISRO rocket models."
+                      : "Reflector telescope (right shelf), illuminated Sun-Earth model, and Satish Dhawan / Solar System murals."}
+                  </p>
+                </div>
+              </div>
+
+              {/* Dual Lab Photo Switcher */}
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() => setAgaazPhotoIndex(0)}
+                  className={`flex items-center gap-2.5 p-2 rounded-lg border text-left transition-colors ${
+                    agaazPhotoIndex === 0
+                      ? 'bg-emerald-50 border-emerald-800 ring-1 ring-emerald-800'
+                      : 'bg-stone-50 border-stone-200 hover:bg-stone-100'
+                  }`}
+                >
+                  <img
+                    src={SCHOOL_IMAGES.agaazLab1}
+                    alt="Agaaz Lab orbital session thumbnail"
+                    className="w-16 h-12 rounded object-cover shrink-0"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="min-w-0">
+                    <div className="text-xs font-bold text-stone-900 truncate">Lab Session & Models</div>
+                    <div className="text-[11px] text-stone-500 truncate">Orbital & Rocket Kits</div>
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setAgaazPhotoIndex(1)}
+                  className={`flex items-center gap-2.5 p-2 rounded-lg border text-left transition-colors ${
+                    agaazPhotoIndex === 1
+                      ? 'bg-emerald-50 border-emerald-800 ring-1 ring-emerald-800'
+                      : 'bg-stone-50 border-stone-200 hover:bg-stone-100'
+                  }`}
+                >
+                  <img
+                    src={SCHOOL_IMAGES.agaazLab2}
+                    alt="Agaaz Lab telescope and apparatus thumbnail"
+                    className="w-16 h-12 rounded object-cover shrink-0"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="min-w-0">
+                    <div className="text-xs font-bold text-stone-900 truncate">Telescope & Apparatus</div>
+                    <div className="text-[11px] text-stone-500 truncate">Solar System & Kits</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Smart Classroom Showcase */}
         {activeTab === 'smart' && (
@@ -202,9 +339,19 @@ export const DigitalAndLibrarySection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-stone-200 flex items-center justify-between text-xs text-stone-500">
+              <div className="mt-8 pt-4 border-t border-stone-200 flex flex-wrap items-center justify-between gap-3 text-xs text-stone-500">
                 <span>Free Open Access for All Enrolled Students</span>
-                <span className="font-mono text-emerald-800">Reading Tables & Study Desks</span>
+                {onOpenDigitalLibrary ? (
+                  <button
+                    type="button"
+                    onClick={onOpenDigitalLibrary}
+                    className="px-4 py-2 rounded-lg bg-emerald-900 hover:bg-emerald-800 text-white font-semibold transition-colors whitespace-nowrap"
+                  >
+                    Open Smart Digital Library (Read Books Online) →
+                  </button>
+                ) : (
+                  <span className="font-mono text-emerald-800">Reading Tables & Study Desks</span>
+                )}
               </div>
             </div>
 

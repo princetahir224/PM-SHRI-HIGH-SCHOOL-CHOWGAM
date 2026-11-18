@@ -126,6 +126,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
 
             <button
+              onClick={() => onNavigate('smart-digital-library')}
+              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-emerald-800 hover:bg-emerald-700 border border-emerald-600 rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
+            >
+              <BookOpen className="w-4 h-4 text-amber-300" />
+              <span>Smart Digital Library</span>
+            </button>
+
+            <button
               onClick={() => onNavigate('ai-tutor')}
               className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-emerald-950 bg-emerald-100 hover:bg-white rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
             >

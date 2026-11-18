@@ -26,6 +26,7 @@ import { SearchModal } from './components/SearchModal';
 import { ResultsCorner } from './components/ResultsCorner';
 import { OnlineAdmissionModal } from './components/OnlineAdmissionModal';
 import { AiTutorSection } from './components/AiTutorSection';
+import { SmartDigitalLibrary } from './components/SmartDigitalLibrary';
 
 import { 
   INITIAL_SCHOOL_INFO, 
@@ -127,11 +128,11 @@ export default function App() {
         const hasScienceLabIncharge = parsed.some((s: StaffMember) =>
           s.slotNumber === 9 && s.role.includes('Science Lab')
         );
-        const hasMuzzaferScience = parsed.some((s: StaffMember) =>
-          s.slotNumber === 11 && s.role.includes('Science Teacher')
+        const hasMuzzaferAgaazIncharge = parsed.some((s: StaffMember) =>
+          s.slotNumber === 11 && s.role.includes('Agaaz Lab In-charge')
         );
 
-        if (hasOldPlaceholders || !hasSlot7PmShri || !hasSamagra || !hasAltafClerk || !hasSportsIncharge || !hasUpdatedTahir || !hasScienceLabIncharge || !hasMuzzaferScience) {
+        if (hasOldPlaceholders || !hasSlot7PmShri || !hasSamagra || !hasAltafClerk || !hasSportsIncharge || !hasUpdatedTahir || !hasScienceLabIncharge || !hasMuzzaferAgaazIncharge) {
           localStorage.setItem('pmshri_staff', JSON.stringify(INITIAL_STAFF_MEMBERS));
           return INITIAL_STAFF_MEMBERS;
         }
@@ -146,7 +147,16 @@ export default function App() {
   const [facilities, setFacilities] = useState<FacilityItem[]>(() => {
     try {
       const saved = localStorage.getItem('pmshri_facilities');
-      return saved ? JSON.parse(saved) : INITIAL_FACILITIES;
+      if (saved) {
+        const parsed: FacilityItem[] = JSON.parse(saved);
+        const hasAgaazLab = parsed.some((f) => f.id === 'fac-agaaz');
+        if (!hasAgaazLab) {
+          localStorage.setItem('pmshri_facilities', JSON.stringify(INITIAL_FACILITIES));
+          return INITIAL_FACILITIES;
+        }
+        return parsed;
+      }
+      return INITIAL_FACILITIES;
     } catch {
       return INITIAL_FACILITIES;
     }
@@ -332,7 +342,12 @@ export default function App() {
         <AiTutorSection />
 
         {/* 5. Smart Classroom, ICT Lab & School Library */}
-        <DigitalAndLibrarySection />
+        <DigitalAndLibrarySection
+          onOpenDigitalLibrary={() => handleNavigate('smart-digital-library')}
+        />
+
+        {/* 5b. Smart Digital Library – Interactive Bookshelves & Online Reader */}
+        <SmartDigitalLibrary />
 
         {/* 6. "Beyond the Classroom" (10 Development Domains) */}
         <BeyondClassroomSection />

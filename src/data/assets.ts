@@ -8,6 +8,9 @@ export const SCHOOL_IMAGES = {
   headmaster: "/assets/aistudio/Headmaster_s_Formal_School_Office_Portrait_43a7726c.png",
   // Official uploaded photograph of the Exposure Visit to IIT / ITI Anantnag
   exposureVisitIitAnantnag: "/assets/aistudio/WhatsApp_Image_2026-11-15_at_6.13.03_PM__1__40808ebe.jpeg",
+  // Official uploaded photographs of the Agaaz Space & Science Lab
+  agaazLab1: "/assets/aistudio/IMG20240423153129_f11261fa.jpg",
+  agaazLab2: "/assets/aistudio/WhatsApp_Image_2026-11-18_at_6.08.26_PM_d412d812.jpeg",
   smartClassroom: "/src/assets/images/smart_classroom_ict_1792911690664.jpg",
   library: "/src/assets/images/school_library_reading_1792911691547.jpg",
   greenCampus: "/src/assets/images/green_campus_valley_1792911692015.jpg",
@@ -15,6 +18,20 @@ export const SCHOOL_IMAGES = {
 };
 
 export const GALLERY_ITEMS = [
+  {
+    id: "gal-agaaz-1",
+    title: "Agaaz Space & Science Lab — Orbital Apparatus & Practical Session",
+    category: "Agaaz Lab & STEM",
+    image: "/assets/aistudio/IMG20240423153129_f11261fa.jpg",
+    caption: "Students and teachers inside the Agaaz Lab (In-charge: Mr. Muzaffer Rasool Malik) exploring Earth-Moon-Sun orbital apparatus, rocket models, globes, and astronomy wall murals."
+  },
+  {
+    id: "gal-agaaz-2",
+    title: "Agaaz Lab — Astronomical Telescope & Planetary Instruments",
+    category: "Agaaz Lab & STEM",
+    image: "/assets/aistudio/WhatsApp_Image_2026-11-18_at_6.08.26_PM_d412d812.jpeg",
+    caption: "Hands-on astronomy and science demonstration in the Agaaz Lab featuring the reflector telescope, illuminated Sun-Earth model, ISRO/Satish Dhawan displays, and complete lab instrument kits."
+  },
   {
     id: "gal-exposure-iit-anantnag",
     title: "Exposure Visit to IIT / ITI Anantnag (Ashajipora, J&K)",

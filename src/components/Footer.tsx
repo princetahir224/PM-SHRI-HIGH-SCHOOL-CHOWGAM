@@ -86,6 +86,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdmin }) => {
                 </button>
               </li>
               <li>
+                <button onClick={() => onNavigate('smart-digital-library')} className="hover:text-white transition-colors">
+                  Smart Digital Library (Read Online)
+                </button>
+              </li>
+              <li>
                 <button onClick={() => onNavigate('ai-tutor')} className="hover:text-white transition-colors">
                   AI Study Tutor & Practice Questionnaire
                 </button>

@@ -169,6 +169,18 @@ export const FacilitiesSection: React.FC<FacilitiesSectionProps> = ({
                   {getStatusBadge(facility.status)}
                 </div>
 
+                {/* Optional Agaaz Lab Preview Image */}
+                {facility.imageKey === 'agaazLab' && (
+                  <div className="mb-3 rounded-lg overflow-hidden border border-stone-200 aspect-16/9 bg-stone-900">
+                    <img
+                      src={SCHOOL_IMAGES.agaazLab1}
+                      alt="Agaaz Space & Science Lab at PM SHRI GHS Chowgam"
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                )}
+
                 {/* Facility Name */}
                 <h3 className="text-lg font-bold text-stone-900 mb-2 leading-snug">
                   {facility.name}
@@ -251,7 +263,28 @@ export const FacilitiesSection: React.FC<FacilitiesSectionProps> = ({
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute bottom-0 inset-x-0 bg-stone-950/70 p-2 text-[11px] text-amber-200">
-                      Verified Campus Photo: PM SHRI Govt High School Chowgam (Zone Shanglus, Dist. Anantnag)
+                      Verified Campus Photo: PM SHRI Govt High School Chowgam (Zone Shangus, Dist. Anantnag)
+                    </div>
+                  </div>
+                )}
+
+                {activeFacilityModal.imageKey === 'agaazLab' && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="rounded-lg overflow-hidden border border-stone-200 aspect-4/3 bg-stone-900 relative">
+                      <img
+                        src={SCHOOL_IMAGES.agaazLab1}
+                        alt="Agaaz Space & Science Lab orbital models session"
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div className="rounded-lg overflow-hidden border border-stone-200 aspect-4/3 bg-stone-900 relative">
+                      <img
+                        src={SCHOOL_IMAGES.agaazLab2}
+                        alt="Agaaz Lab reflector telescope and solar system instruments"
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
                   </div>
                 )}

@@ -41,6 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'academics', label: 'Academics' },
+    { id: 'smart-digital-library', label: 'Library' },
     { id: 'results', label: 'Results' },
     { id: 'ai-tutor', label: 'AI Tutor' },
     { id: 'jkbose-board', label: 'JKBOSE' },
@@ -155,7 +156,7 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           {/* Zone 2: Concise single-line navigation links */}
-          <nav className="hidden lg:flex items-center gap-4 text-sm font-medium text-stone-600">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-4 text-sm font-medium text-stone-600">
             {navItems.map((item) => (
               <button
                 key={item.id}

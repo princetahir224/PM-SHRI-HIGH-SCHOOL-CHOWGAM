@@ -14,7 +14,7 @@ export const GallerySection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
-  const categories = ['All', 'Exposure Visits', 'Campus & Landscape', 'Digital Learning', 'Academics', 'Environment'];
+  const categories = ['All', 'Agaaz Lab & STEM', 'Exposure Visits', 'Campus & Landscape', 'Digital Learning', 'Academics', 'Environment'];
 
   const filteredItems = GALLERY_ITEMS.filter(item => 
     selectedCategory === 'All' || item.category === selectedCategory

@@ -163,6 +163,22 @@ export const INITIAL_FACILITIES: FacilityItem[] = [
     features: ["Curated book catalog", "Reading club corner", "Lending register"]
   },
   {
+    id: "fac-agaaz",
+    name: "Agaaz Space & Science Lab (In-charge: Mr. Muzaffer Rasool Malik)",
+    category: "academic",
+    description: "Dedicated astronomy, space science, and hands-on STEM discovery lab supervised by Teacher In-charge Mr. Muzaffer Rasool Malik, equipped with a reflector telescope, planetary & orbital models, rocketry kits, and scientific apparatus.",
+    status: "Active",
+    accessibility: "Ground-floor interactive lab tables, visual planetary murals, and hands-on group apparatus.",
+    features: [
+      "Astronomical Reflector Telescope",
+      "Earth-Moon-Sun Orbital & Solar System Models",
+      "ISRO Rocket & Launch Vehicle Models",
+      "Optical Prisms, Lenses, Microscopes & Globes",
+      "Teacher In-charge: Mr. Muzaffer Rasool Malik"
+    ],
+    imageKey: "agaazLab"
+  },
+  {
     id: "fac-6",
     name: "Separate Boys' Toilet Facility",
     category: "sanitation",
@@ -727,12 +743,12 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
   {
     id: "staff-11",
     slotNumber: 11,
-    role: "Teacher (Science Teacher)",
+    role: "Teacher (Science Teacher & Agaaz Lab In-charge)",
     designation: "Teacher",
-    department: "Science & Experiential Learning",
-    name: "Mr. Muzzafer Rasool Malik",
+    department: "Agaaz Space & Science Lab · Experiential STEM",
+    name: "Mr. Muzzafer Rasool Malik (Muzaffer Rasool Malik)",
     qualifications: "B.Sc, B.Ed [Official Department Cadre]",
-    responsibilities: "Science Teacher delivering core general science curriculum, conceptual understanding, hands-on scientific models, practical demonstrations, and student mentorship in scientific inquiry.",
+    responsibilities: "Teacher In-charge of the Agaaz Space & Science Lab equipped with astronomical telescope, Earth-Moon-Sun orbital apparatus, rocket & planetary models, and all STEM instruments; Science Teacher guiding student astronomy and scientific inquiry.",
     status: "Verified Staff"
   },
   {
