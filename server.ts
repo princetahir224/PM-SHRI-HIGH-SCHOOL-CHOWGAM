@@ -99,7 +99,14 @@ let lastSyncedTime = new Date().toISOString();
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+  const envPort = process.env.PORT ? parseInt(process.env.PORT, 10) : NaN;
+  const nginxPort = process.env.NGINX_PORT ? parseInt(process.env.NGINX_PORT, 10) : 8080;
+  const PORT =
+    process.env.NODE_ENV !== 'production'
+      ? 3000
+      : !Number.isNaN(envPort) && envPort !== nginxPort
+        ? envPort
+        : 3000;
 
   app.use(express.json());
 
@@ -242,4 +249,7 @@ For specific verification inquiries, parents and students may directly contact H
   });
 }
 
-startServer();
+startServer().catch((err) => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
+});

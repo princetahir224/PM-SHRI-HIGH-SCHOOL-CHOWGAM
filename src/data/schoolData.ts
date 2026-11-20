@@ -747,7 +747,7 @@ export const INITIAL_STAFF_MEMBERS: StaffMember[] = [
     designation: "Teacher",
     department: "Agaaz Space & Science Lab · Experiential STEM",
     name: "Mr. Muzzafer Rasool Malik (Muzaffer Rasool Malik)",
-    qualifications: "B.Sc, B.Ed [Official Department Cadre]",
+    qualifications: "B.Sc, B.Ed, M.A Islamic Studies",
     responsibilities: "Teacher In-charge of the Agaaz Space & Science Lab equipped with astronomical telescope, Earth-Moon-Sun orbital apparatus, rocket & planetary models, and all STEM instruments; Science Teacher guiding student astronomy and scientific inquiry.",
     status: "Verified Staff"
   },

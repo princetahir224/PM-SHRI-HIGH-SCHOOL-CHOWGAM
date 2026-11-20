@@ -128,7 +128,9 @@ export default function App() {
           s.slotNumber === 9 && s.role.includes('Science Lab') && s.role.includes('First-Aid')
         );
         const hasMuzzaferAgaazIncharge = parsed.some((s: StaffMember) =>
-          s.slotNumber === 11 && s.role.includes('Agaaz Lab In-charge')
+          s.slotNumber === 11 &&
+          s.role.includes('Agaaz Lab In-charge') &&
+          s.qualifications === 'B.Sc, B.Ed, M.A Islamic Studies'
         );
 
         if (hasOldPlaceholders || !hasSlot7PmShri || !hasSamagra || !hasAltafClerk || !hasSportsIncharge || !hasUpdatedTahir || !hasScienceLabIncharge || !hasMuzzaferAgaazIncharge) {
